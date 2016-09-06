@@ -1,0 +1,18 @@
+
+body {
+  font: 16px/1 sans-serif;
+}
+#root {
+	width: 80%; 
+	margin: 0 auto;
+  height: 100%;
+}
+
+div.side { 	
+	float: left;
+	width: 50%;
+	text-align: center;
+	border: 1px solid grey;
+	box-sizing: border-box;
+}
+
