@@ -11,7 +11,7 @@
 
 import React, { Component } from 'react';
 import {render} from 'react-dom';
-//import Links from './Links';
+import Links from './Links';
 // import List from './List';
 
 
@@ -20,6 +20,7 @@ class Side extends Component {
 		return( 
 			<div className="side" >
 			<h1>{this.props.side}</h1>
+				<Links first={this.props.side} />
 		  </div>
 		);
 	}
