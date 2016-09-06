@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import {render} from 'react-dom';
+import Board from './Board';
 
-class Hello extends Component {
-	render() {
-		return (
-			<h1>Hello Worldy</h1>
-		);
-	}
-}
+render( <Board />, document.getElementById( 'root' ) ) ;
 
-render( <Hello />, document.getElementById( 'root' ) ) ;
+
+
