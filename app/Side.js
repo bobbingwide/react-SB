@@ -12,7 +12,7 @@
 import React, { Component } from 'react';
 import {render} from 'react-dom';
 import Links from './Links';
-// import List from './List';
+import Items from './Items';
 
 
 class Side extends Component {
@@ -21,6 +21,7 @@ class Side extends Component {
 			<div className="side" >
 			<h1>{this.props.side}</h1>
 				<Links first={this.props.side} letters={this.props.letters} />
+				<Items first={this.props.side} />
 		  </div>
 		);
 	}
