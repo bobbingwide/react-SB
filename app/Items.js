@@ -9,6 +9,11 @@
  * 
  * In WordPress we'd be selecting something using oik-letter
  * The list returned to the S-side has to be kept separately from the list returned to the B-side
+ * 
+ * When the user chooses a particular word then it's matched up with the words on the other side
+ * showing which are valid bigrams. 
+ * 
+ * When both are chosen then the bigram is loaded and displayed. 
  */
  
  
@@ -19,34 +24,9 @@ class Items extends Component {
 
 	render() {
 
-		let words = [	
-				{ id: 1
-				, first: 'S'
-				, word: 'Sable'
-				}
-		,{ id: 2
-		, first: 'S'
-		, word: 'Sack'
-		}
-		,{ id: 3
-		, first: 'S'
-		, word: 'Sad'
-		}
-		,{ id: 4
-		, first: 'B'
-		, word: 'Baa'
-		}
-		,{ id: 5
-		, first: 'B'
-		, word: 'Babble'
-		}
-		,{ id: 6
-		, first: 'B'
-		, word: 'Back'
-		}
-		];
 
-		let wordset = words.filter( ( word ) => word.first === this.props.first );
+		let wordset = this.props.words.filter( ( word ) => word.first === this.props.first );
+		wordset = wordset.filter( ( word ) => word.letter === this.props.letter );
 
 		let items = wordset.map(( item ) => (                                 
 		 <li key={item.id}>
