@@ -28,8 +28,8 @@ class Side extends Component {
 		return( 
 			<div className="side" >
 			<h1>{this.props.side}</h1>
-				<Links first={this.props.side} letters={this.props.letters} letter={this.state.letter} />
-				<Items first={this.props.side} words={this.props.words} letter={this.state.letter} />
+				<Links first={this.props.side} letters={this.props.letters} letter={this.state.letter} notifyBoard={this.props.notifyBoard} />
+				<Items first={this.props.side} words={this.props.words} letter={this.state.letter} notifyBoard={this.props.notifyBoard} />
 		  </div>
 		);
 	}

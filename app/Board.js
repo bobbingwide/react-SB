@@ -66,13 +66,20 @@ class Board extends Component {
 								 };
 	}
 
+	notifySideS( first, letter ) {
+		alert( "notifySideS" );
+	}
+	notifySideB( first, letter ) {
+		alert( "notifySideB" );
+	}
+
 	render() {
 		//let letters = [ 'A', 'B', 'C', 'D', 'E' ];
 		let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 		return( 
 			<div className="app">
-			 <Side side="S" letters={letters} words={words} letter={this.state.letterS} />
-			 <Side side="B" letters={letters} words={words} letter={this.state.letterB} />
+			 <Side side="S" letters={letters} words={words} letter={this.state.letterS} notifyBoard={this.notifySideS} />
+			 <Side side="B" letters={letters} words={words} letter={this.state.letterB} notifyBoard={this.notifySideB} />
 			 {/* <Bigram /> */}
 			</div>
 		);
