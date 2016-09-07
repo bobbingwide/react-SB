@@ -20,7 +20,7 @@ class Side extends Component {
 		return( 
 			<div className="side" >
 			<h1>{this.props.side}</h1>
-				<Links first={this.props.side} />
+				<Links first={this.props.side} letters={this.props.letters} />
 		  </div>
 		);
 	}
