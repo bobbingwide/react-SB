@@ -17,8 +17,7 @@ div.side {
 }
 
 div.side ul { 
-	display: inline;
-	float: left;
+	display: block;
 }
 
 div.side li {
