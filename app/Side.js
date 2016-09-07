@@ -16,12 +16,20 @@ import Items from './Items';
 
 
 class Side extends Component {
+
+	constructor() {
+		super( ...arguments);
+		this.state = { letter: this.props.letter
+								 };
+	}
+
+
 	render() {
 		return( 
 			<div className="side" >
 			<h1>{this.props.side}</h1>
-				<Links first={this.props.side} letters={this.props.letters} letter='A' />
-				<Items first={this.props.side} words={this.props.words} letter='A' />
+				<Links first={this.props.side} letters={this.props.letters} letter={this.state.letter} />
+				<Items first={this.props.side} words={this.props.words} letter={this.state.letter} />
 		  </div>
 		);
 	}
