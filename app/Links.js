@@ -23,7 +23,7 @@ class Links extends Component {
 	 *
 	 */
 	handleClick( letter) {
-			alert( "Wow: " + letter );
+			//alert( "Wow: " + letter );
 			this.props.notifyBoard( this.props.first, letter );
 
 	}
