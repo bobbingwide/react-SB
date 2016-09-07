@@ -15,10 +15,12 @@ import Side from './Side';
 
 class Board extends Component {
 	render() {
+		//let letters = [ 'A', 'B', 'C', 'D', 'E' ];
+		let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 		return( 
 			<div className="app">
-			 <Side side="S" />
-			 <Side side="B" />
+			 <Side side="S" letters={letters} />
+			 <Side side="B" letters={letters}/>
 
 			</div>
 		);
