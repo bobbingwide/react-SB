@@ -16,3 +16,13 @@ div.side {
 	box-sizing: border-box;
 }
 
+div.side ul { 
+	display: inline;
+	float: left;
+}
+
+div.side li {
+	display: inline-block;
+	margin: 0 0 0 3px;
+}
+
