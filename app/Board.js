@@ -13,14 +13,53 @@ import {render} from 'react-dom';
 import Side from './Side';
 
 
+let words = [	
+		{ id: 1
+		, first: 'S'
+		, letter: 'A'
+		, word: 'Sable'
+		}
+		,{ id: 2
+		, first: 'S'
+		, letter: 'A'
+		, word: 'Sack'
+		}
+		,{ id: 3
+		, first: 'S'
+		, letter: 'A'
+		, word: 'Sad'
+		}
+		,{ id: 4
+		, first: 'B'
+		, letter: 'A'
+		, word: 'Baa'
+		}
+		,{ id: 5
+		, first: 'B'
+		, letter: 'A'
+		, word: 'Babble'
+		}
+		,{ id: 6
+		, first: 'B'
+    , letter: 'A'
+		, word: 'Back'
+		}
+		,{ id: 7
+		, first: 'S'
+	  , letter: 'B'
+		, word: 'Sbad'
+		}
+		];
+
+
 class Board extends Component {
 	render() {
 		//let letters = [ 'A', 'B', 'C', 'D', 'E' ];
 		let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 		return( 
 			<div className="app">
-			 <Side side="S" letters={letters} />
-			 <Side side="B" letters={letters}/>
+			 <Side side="S" letters={letters} words={words} />
+			 <Side side="B" letters={letters} words={words} />
 
 			</div>
 		);
