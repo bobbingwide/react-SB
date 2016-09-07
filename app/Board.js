@@ -1,7 +1,9 @@
 /** 
  * Implement the Board
  * This consists of the S-side and the B-side
- * both of which display Sides which consist of  
+ * and the selected bigram
+ * 
+ * both of which display a Side which consists of  
  * - a heading for the first letter					    S
  * - a list of links for the second letter   A B C ... X Y Z
  * - items with the selected first and second letter
@@ -49,18 +51,29 @@ let words = [
 	  , letter: 'B'
 		, word: 'Sbad'
 		}
+		, {id: 8, first: 'S', letter: 'C', word: 'Scot' }
 		];
 
 
 class Board extends Component {
+	constructor() {
+		super( ...arguments);
+		this.state = { letterS: 'B'
+								 , letterB: 'A'
+								 , wordS: false
+								 , wordB: false
+								 , SandBselected: false
+								 };
+	}
+
 	render() {
 		//let letters = [ 'A', 'B', 'C', 'D', 'E' ];
 		let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 		return( 
 			<div className="app">
-			 <Side side="S" letters={letters} words={words} />
-			 <Side side="B" letters={letters} words={words} />
-
+			 <Side side="S" letters={letters} words={words} letter={this.state.letterS} />
+			 <Side side="B" letters={letters} words={words} letter={this.state.letterB} />
+			 {/* <Bigram /> */}
 			</div>
 		);
 	}
