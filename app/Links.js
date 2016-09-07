@@ -8,7 +8,7 @@
  */
  
 import React, { Component } from 'react';
-import {render} from 'react-dom';
+//import {render} from 'react-dom';
 
 
 
@@ -17,7 +17,7 @@ class Links extends Component {
 	render() {
 		var first = this.props.first;
 		var links = this.props.letters.map(( letter ) => ( 
-			<li><a href={`http://qw/bigram/?s=${first}${letter}`}>{letter}</a></li>
+			<li key={letter}><a href={`http://qw/bigram/?s=${first}${letter}`}>{letter}</a></li>
 				));
 
 
