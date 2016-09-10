@@ -14,20 +14,6 @@ import React, { Component, PropTypes } from 'react';
 //import {render} from 'react-dom';
 
 class Link extends Component {
-	render() {
-		console.log( "Link" + this.props.data.name);
-		return(
-		<li>
-		{this.props.data.name}
-		</li>
-		);
-	}
-}
-
-
-
-class Links2 extends Component {
-
 	/**
 	 * How do we notify the Side what's been selected
 	 * 
@@ -35,16 +21,35 @@ class Links2 extends Component {
 	 */
 	handleClick( letter) {
 			//alert( "Wow: " + letter );
-			this.props.notifyBoard( this.props.first, letter );
+			this.props.notifyBoard( letter );
 
 	}
+	render() {
+		//console.log( "Link" + this.props.data.name);
+		return(
+		<li onClick={this.handleClick.bind(this, this.props.data.name )}>
+		{this.props.data.name}
+		</li>
+		);
+	}
+}
+
+Link.propTypes = {
+	first: PropTypes.string.isRequired,
+	notifyBoard: PropTypes.func.isRequired,
+	data: PropTypes.object.isRequired
+}
+
+
+
+
+class Links2 extends Component {
+
 
 	render() {
-		var first = this.props.first;
 		let links = this.props.letters.map(( letter ) => { 
-			console.log( letter );
 			return (
-			<Link key={letter.id} data={letter} onClick={this.handleClick.bind(this, letter.name )}	/> 
+			<Link key={letter.id} data={letter} first={this.props.first} notifyBoard={this.props.notifyBoard}	/> 
 				)
 				});
 

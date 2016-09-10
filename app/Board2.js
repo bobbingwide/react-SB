@@ -44,11 +44,11 @@ class Board2 extends Component {
 
 	render() {
 		//let letters = [ 'A', 'B', 'C', 'D', 'E' ];
-		let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+		//let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 		return( 
 			<div className="app">
-			 <Side2 side="S" letters={this.props.s_letters} words={this.props.s_posts} letter={this.state.letterS} notifyBoard={this.notifySideS.bind( this )} />
-			 <Side2 side="B" letters={this.props.b_letters} words={this.props.b_posts} letter={this.state.letterB} notifyBoard={this.notifySideB.bind( this )} /> 
+			 <Side2 side="S" letters={this.props.s_letters} words={this.props.s_posts} letter={this.state.letterS} notifyBoard={this.props.notifySideS} />
+			 <Side2 side="B" letters={this.props.b_letters} words={this.props.b_posts} letter={this.state.letterB} notifyBoard={this.props.notifySideB} /> 
 			 {/* <Bigram /> */}
 			</div>
 		);
@@ -63,7 +63,10 @@ Board2.propTypes = {
 	s_posts: PropTypes.array,
 	b_posts: PropTypes.array,
 	s_letters: PropTypes.array,
-	b_letters: PropTypes.array
+	b_letters: PropTypes.array,
+	notifySideS: PropTypes.func,
+	notifySideB: PropTypes.func,
+ 
 }
 
 

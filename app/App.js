@@ -18,7 +18,9 @@ import {render} from 'react-dom';
 import Board2 from './Board2';
 import api from 'wordpress-rest-api-oauth-1';
 
-const BIGRAM_URL = "http://qw/bigram/"
+//const BIGRAM_URL = "http://qw/bigram/"
+// http://stackoverflow.com/questions/10143093/origin-is-not-allowed-by-access-control-allow-origin
+const BIGRAM_URL = "http://localhost/bigram/"
 
 const demoApi = new api({
     url: BIGRAM_URL
@@ -55,6 +57,23 @@ class App extends Component {
 		demoApi.get( '/wp/v2/bigram/', { filter: { 's-letter': sletter } } )
 		.then( posts => { 
 			this.setState( {s_posts: posts } );
+			this.setState( {sletter: sletter } );
+			this.setState( {isLoading: false } );
+			 });
+	}
+
+
+	/**
+	 * Obtain all posts for the second letter of the B word
+	 * 
+	 * Perform: http://qw/bigram/wp-json/wp/v2/bigram/?filter[b-letter]=A
+	 */
+	onBletter( bletter ) {
+		this.setState( { isLoading: true } );
+		demoApi.get( '/wp/v2/bigram/', { filter: { 'b-letter': bletter } } )
+		.then( posts => { 
+			this.setState( {b_posts: posts } );
+			this.setState( {bletter: bletter } );
 			this.setState( {isLoading: false } );
 			 });
 	}
@@ -67,16 +86,21 @@ class App extends Component {
 
 	loadsletters() {
 		this.setState( { isLoading: true } );
-		demoApi.get( '/wp/v2/s-letter/', { per_page: 29 } )
+		demoApi.get( '/wp/v2/s-letter/', { per_page: 31 } )
 			.then( terms => { 
 				this.setState( {s_letters: terms } );
 				this.setState( {isLoading: false } );
 			 });
 	}
 
+	/**
+	 * Obtain all values for the b-letter taxonomy
+	 *
+	 * Perform: http://qw/bigram/wp-json/wp/v2/b-letter/
+	 */
 	loadbletters() {		
 		this.setState( { isLoading: true } );
-		demoApi.get( '/wp/v2/b-letter/', { per_page: 29 } )
+		demoApi.get( '/wp/v2/b-letter/', { per_page: 31 } )
 			.then( terms => { 
 				this.setState( {b_letters: terms } );
 				this.setState( {isLoading: false } );
@@ -93,7 +117,10 @@ class App extends Component {
 	 
 		return( 
 			<div className="app">
-			<Board2 s_posts={this.state.s_posts} b_posts={this.state.b_posts} s_letters={this.state.s_letters} b_letters={this.state.b_letters} />
+			<Board2 s_posts={this.state.s_posts} b_posts={this.state.b_posts} 
+				s_letters={this.state.s_letters} b_letters={this.state.b_letters} 
+				notifySideS={this.onSletter.bind( this )} notifySideB={this.onBletter.bind( this )}
+			/>
 			</div> 
 			);
 
