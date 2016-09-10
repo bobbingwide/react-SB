@@ -3,6 +3,8 @@
  *
  * Bigrams - these are the posts that we load from the server
  *
+ * The logic I started developing here is now in App.js
+ * See Pro React pp 67-69.
  */
  
 import React, { Component } from 'react';
@@ -36,6 +38,11 @@ class Bigrams extends Component {
 
 	onConnect( url ) {
 		demoApi.get( '/wp/v2/bigram' ).then( posts => { console.log( posts ) });
+	}
+
+	onSletter( sletter ) {
+		demoApi.get( '/wp/v2/bigram/', { 'filter[s-letter]': sletter } )
+		.then( posts => { this.setState( {posts: posts } ) });
 	}
 
 
