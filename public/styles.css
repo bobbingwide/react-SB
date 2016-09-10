@@ -1,3 +1,6 @@
+/* (C) Copyright Bobbing Wide 2016 
+ * Styles for react-SB
+ */
 
 body {
   font: 16px/1 sans-serif;
@@ -23,5 +26,11 @@ div.side ul {
 div.side li {
 	display: inline-block;
 	margin: 0 0 0 3px;
+	padding: 2px;
+}
+
+div.side li:hover {
+	color: #ffffff;
+	background-color: #222222;
 }
 
