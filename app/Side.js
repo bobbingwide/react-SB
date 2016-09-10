@@ -1,4 +1,5 @@
-/**
+/**	
+ * (C) Copyright Bobbing Wide 2016
  * Side
  
  * A Side consists of  

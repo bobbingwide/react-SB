@@ -1,4 +1,6 @@
 /**
+
+ * (C) Copyright Bobbing Wide 2016
  * Display Links for the selected side
  * 
  * Challenges:

@@ -1,4 +1,6 @@
 /**
+ * (C) Copyright Bobbing Wide 2016
+ *
  * Items in a selected list
  *
  * Each time a selection is made from the Links section for a particular Side
@@ -7,7 +9,7 @@
  * Actually for the S-side with selected letter A we want all the items
  * which are in the S-word category with Second-letter A
  * 
- * In WordPress we'd be selecting something using oik-letter
+ * In WordPress we'd be selecting something using oik-a2z
  * The list returned to the S-side has to be kept separately from the list returned to the B-side
  * 
  * When the user chooses a particular word then it's matched up with the words on the other side
