@@ -1,4 +1,6 @@
-/** 
+/**
+ * (C) Copyright Bobbing Wide 2016
+ *
  * Implement the Board
  * This consists of the S-side and the B-side
  * and the selected bigram
@@ -14,46 +16,8 @@ import React, { Component } from 'react';
 import {render} from 'react-dom';
 import Side from './Side';
 
-
-let words = [	
-		{ id: 1
-		, first: 'S'
-		, letter: 'A'
-		, word: 'Sable'
-		}
-		,{ id: 2
-		, first: 'S'
-		, letter: 'A'
-		, word: 'Sack'
-		}
-		,{ id: 3
-		, first: 'S'
-		, letter: 'A'
-		, word: 'Sad'
-		}
-		,{ id: 4
-		, first: 'B'
-		, letter: 'A'
-		, word: 'Baa'
-		}
-		,{ id: 5
-		, first: 'B'
-		, letter: 'A'
-		, word: 'Babble'
-		}
-		,{ id: 6
-		, first: 'B'
-    , letter: 'A'
-		, word: 'Back'
-		}
-		,{ id: 7
-		, first: 'S'
-	  , letter: 'B'
-		, word: 'Sbad'
-		}
-		, {id: 8, first: 'S', letter: 'C', word: 'Scot' }
-		];
-
+import words from './Words';
+import bigrams from './Bigrams';
 
 class Board extends Component {
 	constructor() {
