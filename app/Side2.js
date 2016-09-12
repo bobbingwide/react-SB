@@ -10,7 +10,7 @@
 import React, { Component, PropTypes } from 'react';
 import {render} from 'react-dom';
 import Links2 from './Links2';
-import Items from './Items';
+import Items2 from './Items2';
 
 
 class Side2 extends Component {
@@ -23,11 +23,12 @@ class Side2 extends Component {
 
 
 	render() {
+		console.log( this.props.words );
 		return( 
 			<div className="side" >
 			<h1>{this.props.side}</h1>
 				<Links2 first={this.props.side} letters={this.props.letters} letter={this.props.letter} notifyBoard={this.props.notifyBoard} />
-				{/* <Items first={this.props.side} words={this.props.words} letter={this.props.letter} notifyBoard={this.props.notifyBoard} /> */}
+				<Items2 first={this.props.side} words={this.props.words} letter={this.props.letter} notifyBoard={this.props.notifyBoard} />
 		  </div>
 		);
 	}
@@ -35,10 +36,11 @@ class Side2 extends Component {
 
 
 Side2.propTypes = {
-		letters: PropTypes.array.isRequired,
-		words: PropTypes.array.isRequired,
-		letter: PropTypes.string.isRequired,
-		notifyBoard: PropTypes.func.isRequired
+	side: PropTypes.string.isRequired,
+	letters: PropTypes.array.isRequired,
+	words: PropTypes.array.isRequired,
+	letter: PropTypes.string.isRequired,
+	notifyBoard: PropTypes.func.isRequired
 }
 
 export default Side2;
