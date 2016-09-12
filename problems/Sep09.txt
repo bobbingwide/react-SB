@@ -1,0 +1,8 @@
+http://qw/bigram/wp-json/wp/v2/bigram
+
+{"code":"rest_no_route","message":"No route was found matching the URL and request method","data":{"status":404}}
+
+this was a problem with oik-types replacing the post type definition in the new filter for 4.6
+
+
+

@@ -1,0 +1,13 @@
+
+
+
+invariant.js?4599:38 Uncaught Invariant Violation: Objects are not valid as a React child (found: object with keys {id, word}). 
+If you meant to render a collection of children, 
+use an array instead or wrap the object using createFragment(object) from the React add-ons. 
+Check the render method of `Items`.
+
+
+warning.js?8a56:36 Warning: Each child in an array or iterator should have a unique "key" prop. 
+Check the render method of `Items`. See https://fb.me/react-warning-keys for more information
+
+

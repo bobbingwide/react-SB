@@ -1,0 +1,420 @@
+npm install webpack -g
+
+C:\apache\htdocs\react>npm install webpack -g > webpack.log
+npm WARN install Couldn't install optional dependency: Unsupported
+npm ERR! Windows_NT 10.0.10586
+npm ERR! argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "webpack" "-g"
+npm ERR! node v5.5.0
+npm ERR! npm  v3.3.12
+npm ERR! path C:\Users\Herb\AppData\Roaming\npm\node_modules\webpack
+npm ERR! code EPERM
+npm ERR! errno -4048
+npm ERR! syscall rename
+
+npm ERR! Error: EPERM: operation not permitted, rename 'C:\Users\Herb\AppData\Roaming\npm\node_modules\webpack' -> 'C:\Users\Herb\AppData\Roaming\npm\node_modules\.webp
+ack.DELETE'
+npm ERR!     at Error (native)
+npm ERR!  { [Error: EPERM: operation not permitted, rename 'C:\Users\Herb\AppData\Roaming\npm\node_modules\webpack' -> 'C:\Users\Herb\AppData\Roaming\npm\node_modules\.
+webpack.DELETE']
+npm ERR!   errno: -4048,
+npm ERR!   code: 'EPERM',
+npm ERR!   syscall: 'rename',
+npm ERR!   path: 'C:\\Users\\Herb\\AppData\\Roaming\\npm\\node_modules\\webpack',
+npm ERR!   dest: 'C:\\Users\\Herb\\AppData\\Roaming\\npm\\node_modules\\.webpack.DELETE' }
+npm ERR!
+npm ERR! Please try running this command again as root/Administrator.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     C:\apache\htdocs\react\npm-debug.log
+
+
+npm install webpack-dev-server -g
+
+
+C:\Users\Herb\AppData\Roaming\npm\webpack-dev-server -> C:\Users\Herb\AppData\Roaming\npm\node_modules\webpack-dev-server\bin\webpack-dev-server.js
+C:\Users\Herb\AppData\Roaming\npm
+├── UNMET PEER DEPENDENCY webpack@>=1.3.0 <3
+└─┬ webpack-dev-server@1.15.1 
+  └── UNMET PEER DEPENDENCY webpack@1 || ^2.1.0-beta
+
+
+
+
+http://stackoverflow.com/questions/20764881/why-does-npm-install-say-i-have-unmet-dependencies
+
+
+npm update -g
+
+C:\apache\htdocs\react>npm cache clean
+
+C:\apache\htdocs\react>
+C:\apache\htdocs\react>npm update -g
+npm WARN deprecated minimatch@2.0.10: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+npm WARN deprecated minimatch@0.2.14: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+npm WARN deprecated lodash@1.0.2: lodash@<3.0.0 is no longer maintained. Upgrade to lodash@^4.0.0.
+npm WARN deprecated graceful-fs@1.2.3: graceful-fs v3.0.0 and before will fail on node releases >= v7.0. Please update to graceful-fs
+pm ls graceful-fs' to find it in the tree.
+C:\Users\Herb\AppData\Roaming\npm\bower -> C:\Users\Herb\AppData\Roaming\npm\node_modules\bower\bin\bower
+C:\Users\Herb\AppData\Roaming\npm\gulp -> C:\Users\Herb\AppData\Roaming\npm\node_modules\gulp\bin\gulp.js
+- minimatch@2.0.10 node_modules\gulp\node_modules\glob-stream\node_modules\minimatch
+- glob@4.5.3 node_modules\gulp\node_modules\glob-stream\node_modules\glob
+- path-is-absolute@1.0.0 node_modules\gulp\node_modules\path-is-absolute
+- spdx-exceptions@1.0.4 node_modules\gulp\node_modules\spdx-exceptions
+C:\Users\Herb\AppData\Roaming\npm
++-- bower@1.7.9
++-- gulp@3.9.1 
+
+
+C:\apache\htdocs\react\chapter1>npm install webpack@1.12 -g
+npm WARN install Couldn't install optional dependency: Unsupported
+C:\Users\Herb\AppData\Roaming\npm\webpack -> C:\Users\Herb\AppData\Roaming\npm\node_modules\webpack\bin\webpack.js
+- acorn@3.3.0 node_modules\webpack\node_modules\acorn
+C:\Users\Herb\AppData\Roaming\npm
++-- webpack@1.12.15
+  +-- esprima@2.7.3
+	
+
+
+C:\apache\htdocs\react\chapter1>npm install webpack-dev-server@1.14 -g
+C:\Users\Herb\AppData\Roaming\npm\webpack-dev-server -> C:\Users\Herb\AppData\Roaming\npm\node_modules\webpack-dev-server\bin\webpack-dev-server.js
+- arr-flatten@1.0.1 node_modules\webpack-dev-server\node_modules\arr-flatten
+- arr-diff@2.0.0 node_modules\webpack-dev-server\node_modules\arr-diff
+- array-unique@0.2.1 node_modules\webpack-dev-server\node_modules\array-unique
+- filename-regex@2.0.0 node_modules\webpack-dev-server\node_modules\filename-regex
+- for-in@0.1.5 node_modules\webpack-dev-server\node_modules\for-in
+- for-own@0.1.4 node_modules\webpack-dev-server\node_modules\for-own
+- is-buffer@1.1.4 node_modules\webpack-dev-server\node_modules\is-buffer
+- is-dotfile@1.0.2 node_modules\webpack-dev-server\node_modules\is-dotfile
+- is-extendable@0.1.1 node_modules\webpack-dev-server\node_modules\is-extendable
+- is-extglob@1.0.0 node_modules\webpack-dev-server\node_modules\is-extglob
+- extglob@0.3.2 node_modules\webpack-dev-server\node_modules\extglob
+- is-glob@2.0.1 node_modules\webpack-dev-server\node_modules\is-glob
+- glob-parent@2.0.0 node_modules\webpack-dev-server\node_modules\glob-parent
+- glob-base@0.3.0 node_modules\webpack-dev-server\node_modules\glob-base
+- is-posix-bracket@0.1.1 node_modules\webpack-dev-server\node_modules\is-posix-bracket
+- expand-brackets@0.1.5 node_modules\webpack-dev-server\node_modules\expand-brackets
+- is-primitive@2.0.0 node_modules\webpack-dev-server\node_modules\is-primitive
+- is-equal-shallow@0.1.3 node_modules\webpack-dev-server\node_modules\is-equal-shallow
+- isobject@2.1.0 node_modules\webpack-dev-server\node_modules\isobject
+- kind-of@3.0.4 node_modules\webpack-dev-server\node_modules\kind-of
+- is-number@2.1.0 node_modules\webpack-dev-server\node_modules\is-number
+- lodash@4.15.0 node_modules\webpack-dev-server\node_modules\lodash
+- normalize-path@2.0.1 node_modules\webpack-dev-server\node_modules\normalize-path
+- object.omit@2.0.0 node_modules\webpack-dev-server\node_modules\object.omit
+- open@0.0.5 node_modules\webpack-dev-server\node_modules\open
+- parse-glob@3.0.4 node_modules\webpack-dev-server\node_modules\parse-glob
+- preserve@0.2.0 node_modules\webpack-dev-server\node_modules\preserve
+- randomatic@1.1.5 node_modules\webpack-dev-server\node_modules\randomatic
+- regex-cache@0.4.3 node_modules\webpack-dev-server\node_modules\regex-cache
+- repeat-element@1.1.2 node_modules\webpack-dev-server\node_modules\repeat-element
+- repeat-string@1.5.4 node_modules\webpack-dev-server\node_modules\repeat-string
+- fill-range@2.2.3 node_modules\webpack-dev-server\node_modules\fill-range
+- expand-range@1.8.2 node_modules\webpack-dev-server\node_modules\expand-range
+- braces@1.8.5 node_modules\webpack-dev-server\node_modules\braces
+- micromatch@2.3.11 node_modules\webpack-dev-server\node_modules\micromatch
+- http-proxy-middleware@0.17.1 node_modules\webpack-dev-server\node_modules\http-proxy-middleware
+C:\Users\Herb\AppData\Roaming\npm
++-- UNMET PEER DEPENDENCY webpack@>=1.3.0 <3
++-- webpack-dev-server@1.14.1
+  +-- connect-history-api-fallback@1.1.0
+  +-- UNMET PEER DEPENDENCY webpack@1 || ^2.1.0-beta
+
+npm WARN EPEERINVALID webpack-dev-server@1.14.1 requires a peer of webpack@>=1.3.0 <3 but none was installed.
+npm WARN EPEERINVALID webpack-dev-middleware@1.6.1 requires a peer of webpack@1 || ^2.1.0-beta but none was installed.
+
+
+https://github.com/webpack/webpack-dev-server/issues/349
+
+
+Having installed webpack-dev-server globally I tried running it directly rather than running npm start
+with NODE_ENV=production still set it took a lot longer to start
+
+But once started, after making a change to the App.js file and saving the results were displayed immediately on the browser
+OK. I only changed it from "Hello World" to "Hello Worldy".  
+
+
+
+C:\apache\htdocs\react\chapter1>webpack-dev-server
+http://localhost:8080/
+webpack result is served from /
+content is served from ./public
+404s will fallback to /index.html
+webpack: wait until bundle finished: /
+Hash: c8a775adad40c3c23d22
+Version: webpack 1.12.15
+Time: 13643ms
+    Asset     Size  Chunks             Chunk Names
+bundle.js  2.53 MB       0  [emitted]  main
+chunk    {0} bundle.js (main) 916 kB [rendered]
+    [0] multi main 40 bytes {0} [built]
+    [1] (webpack)-dev-server/client?http://localhost:8080 2.67 kB {0} [built]
+    [2] ./~/url/url.js 22.3 kB {0} [built]
+    [3] ./~/url/~/punycode/punycode.js 14.6 kB {0} [built]
+    [4] (webpack)/buildin/module.js 251 bytes {0} [built]
+    [5] ./~/querystring/index.js 127 bytes {0} [built]
+    [6] ./~/querystring/decode.js 2.4 kB {0} [built]
+    [7] ./~/querystring/encode.js 2.09 kB {0} [built]
+    [8] ./~/sockjs-client/lib/entry.js 244 bytes {0} [built]
+    [9] ./~/sockjs-client/lib/transport-list.js 613 bytes {0} [built]
+   [10] ./~/sockjs-client/lib/transport/websocket.js 2.71 kB {0} [built]
+   [11] ./~/process/browser.js 5.3 kB {0} [built]
+   [12] ./~/sockjs-client/lib/utils/event.js 2 kB {0} [built]
+   [13] ./~/sockjs-client/lib/utils/random.js 746 bytes {0} [built]
+   [14] ./~/sockjs-client/lib/utils/browser-crypto.js 438 bytes {0} [built]
+   [15] ./~/sockjs-client/lib/utils/url.js 975 bytes {0} [built]
+   [16] ./~/url-parse/index.js 8.55 kB {0} [built]
+   [17] ./~/requires-port/index.js 753 bytes {0} [built]
+   [18] ./~/url-parse/lolcation.js 1.58 kB {0} [built]
+   [19] ./~/querystringify/index.js 1.3 kB {0} [built]
+   [20] ./~/debug/browser.js 3.76 kB {0} [built]
+   [21] ./~/debug/debug.js 4.1 kB {0} [built]
+   [22] ./~/ms/index.js 2.33 kB {0} [built]
+   [23] ./~/inherits/inherits_browser.js 672 bytes {0} [built]
+   [24] ./~/sockjs-client/lib/event/emitter.js 1.27 kB {0} [built]
+   [25] ./~/sockjs-client/lib/event/eventtarget.js 1.85 kB {0} [built]
+   [26] ./~/sockjs-client/lib/transport/browser/websocket.js 172 bytes {0} [built]
+   [27] ./~/sockjs-client/lib/transport/xhr-streaming.js 1.25 kB {0} [built]
+   [28] ./~/sockjs-client/lib/transport/lib/ajax-based.js 1.31 kB {0} [built]
+   [29] ./~/sockjs-client/lib/transport/lib/sender-receiver.js 1.15 kB {0} [built]
+   [30] ./~/sockjs-client/lib/transport/lib/buffered-sender.js 2.3 kB {0} [built]
+   [31] ./~/sockjs-client/lib/transport/lib/polling.js 1.32 kB {0} [built]
+   [32] ./~/sockjs-client/lib/transport/receiver/xhr.js 1.58 kB {0} [built]
+   [33] ./~/sockjs-client/lib/transport/sender/xhr-cors.js 343 bytes {0} [built]
+   [34] ./~/sockjs-client/lib/transport/browser/abstract-xhr.js 4.8 kB {0} [built]
+   [35] ./~/sockjs-client/lib/transport/sender/xhr-local.js 352 bytes {0} [built]
+   [36] ./~/sockjs-client/lib/utils/browser.js 560 bytes {0} [built]
+   [37] ./~/sockjs-client/lib/transport/xdr-streaming.js 984 bytes {0} [built]
+   [38] ./~/sockjs-client/lib/transport/sender/xdr.js 2.46 kB {0} [built]
+   [39] ./~/sockjs-client/lib/transport/eventsource.js 766 bytes {0} [built]
+   [40] ./~/sockjs-client/lib/transport/receiver/eventsource.js 1.58 kB {0} [built]
+   [41] ./~/sockjs-client/lib/transport/browser/eventsource.js 37 bytes {0} [built]
+   [42] ./~/sockjs-client/lib/transport/lib/iframe-wrap.js 981 bytes {0} [built]
+   [43] ./~/sockjs-client/lib/transport/iframe.js 3.83 kB {0} [built]
+   [44] ./~/json3/lib/json3.js 43.3 kB {0} [built]
+   [45] (webpack)/buildin/amd-options.js 43 bytes {0} [built]
+   [46] ./~/sockjs-client/lib/version.js 26 bytes {0} [built]
+   [47] ./~/sockjs-client/lib/utils/iframe.js 5.06 kB {0} [built]
+   [48] ./~/sockjs-client/lib/utils/object.js 532 bytes {0} [built]
+   [49] ./~/sockjs-client/lib/transport/htmlfile.js 710 bytes {0} [built]
+   [50] ./~/sockjs-client/lib/transport/receiver/htmlfile.js 2.2 kB {0} [built]
+   [51] ./~/sockjs-client/lib/transport/xhr-polling.js 894 bytes {0} [built]
+   [52] ./~/sockjs-client/lib/transport/xdr-polling.js 712 bytes {0} [built]
+   [53] ./~/sockjs-client/lib/transport/jsonp-polling.js 1.02 kB {0} [built]
+   [54] ./~/sockjs-client/lib/transport/receiver/jsonp.js 5.57 kB {0} [built]
+   [55] ./~/sockjs-client/lib/transport/sender/jsonp.js 2.46 kB {0} [built]
+   [56] ./~/sockjs-client/lib/main.js 11.9 kB {0} [built]
+   [57] ./~/sockjs-client/lib/shims.js 18.2 kB {0} [built]
+   [58] ./~/sockjs-client/lib/utils/escape.js 2.31 kB {0} [built]
+   [59] ./~/sockjs-client/lib/utils/transport.js 1.35 kB {0} [built]
+   [60] ./~/sockjs-client/lib/utils/log.js 450 bytes {0} [built]
+   [61] ./~/sockjs-client/lib/event/event.js 477 bytes {0} [built]
+   [62] ./~/sockjs-client/lib/location.js 177 bytes {0} [built]
+   [63] ./~/sockjs-client/lib/event/close.js 295 bytes {0} [built]
+   [64] ./~/sockjs-client/lib/event/trans-message.js 292 bytes {0} [built]
+   [65] ./~/sockjs-client/lib/info-receiver.js 2.22 kB {0} [built]
+   [66] ./~/sockjs-client/lib/transport/sender/xhr-fake.js 456 bytes {0} [built]
+   [67] ./~/sockjs-client/lib/info-iframe.js 1.52 kB {0} [built]
+   [68] ./~/sockjs-client/lib/info-iframe-receiver.js 791 bytes {0} [built]
+   [69] ./~/sockjs-client/lib/info-ajax.js 1.03 kB {0} [built]
+   [70] ./~/sockjs-client/lib/iframe-bootstrap.js 2.9 kB {0} [built]
+   [71] ./~/sockjs-client/lib/facade.js 723 bytes {0} [built]
+   [72] ./~/strip-ansi/index.js 161 bytes {0} [built]
+   [73] ./~/ansi-regex/index.js 135 bytes {0} [built]
+   [74] ./app/App.js 2.23 kB {0} [built]
+   [75] ./~/react/react.js 56 bytes {0} [built]
+   [76] ./~/react/lib/React.js 2.72 kB {0} [built]
+   [77] ./~/object-assign/index.js 1.99 kB {0} [built]
+   [78] ./~/react/lib/ReactChildren.js 6.22 kB {0} [built]
+   [79] ./~/react/lib/PooledClass.js 3.59 kB {0} [built]
+   [80] ./~/react/lib/reactProdInvariant.js 1.27 kB {0} [built]
+   [81] ./~/fbjs/lib/invariant.js 1.49 kB {0} [built]
+   [82] ./~/react/lib/ReactElement.js 12.5 kB {0} [built]
+   [83] ./~/react/lib/ReactCurrentOwner.js 657 bytes {0} [built]
+   [84] ./~/fbjs/lib/warning.js 2.1 kB {0} [built]
+   [85] ./~/fbjs/lib/emptyFunction.js 1.08 kB {0} [built]
+   [86] ./~/react/lib/canDefineProperty.js 632 bytes {0} [built]
+   [87] ./~/react/lib/traverseAllChildren.js 6.74 kB {0} [built]
+   [88] ./~/react/lib/getIteratorFn.js 1.15 kB {0} [built]
+   [89] ./~/react/lib/KeyEscapeUtils.js 1.33 kB {0} [built]
+   [90] ./~/react/lib/ReactComponent.js 4.64 kB {0} [built]
+   [91] ./~/react/lib/ReactNoopUpdateQueue.js 3.4 kB {0} [built]
+   [92] ./~/fbjs/lib/emptyObject.js 458 bytes {0} [built]
+   [93] ./~/react/lib/ReactPureComponent.js 1.36 kB {0} [built]
+   [94] ./~/react/lib/ReactClass.js 27.2 kB {0} [built]
+   [95] ./~/react/lib/ReactPropTypeLocations.js 552 bytes {0} [built]
+   [96] ./~/fbjs/lib/keyMirror.js 1.25 kB {0} [built]
+   [97] ./~/react/lib/ReactPropTypeLocationNames.js 614 bytes {0} [built]
+   [98] ./~/fbjs/lib/keyOf.js 1.1 kB {0} [built]
+   [99] ./~/react/lib/ReactDOMFactories.js 5.56 kB {0} [built]
+  [100] ./~/react/lib/ReactElementValidator.js 8.08 kB {0} [built]
+  [101] ./~/react/lib/ReactComponentTreeHook.js 10.1 kB {0} [built]
+  [102] ./~/react/lib/checkReactTypeSpec.js 4.23 kB {0} [built]
+  [103] ./~/react/lib/ReactPropTypesSecret.js 478 bytes {0} [built]
+  [104] ./~/react/lib/ReactPropTypes.js 15.6 kB {0} [built]
+  [105] ./~/react/lib/ReactVersion.js 382 bytes {0} [built]
+  [106] ./~/react/lib/onlyChild.js 1.37 kB {0} [built]
+  [107] ./~/react-dom/index.js 63 bytes {0} [built]
+  [108] ./~/react/lib/ReactDOM.js 5.08 kB {0} [built]
+  [109] ./~/react/lib/ReactDOMComponentTree.js 6.2 kB {0} [built]
+  [110] ./~/react/lib/DOMProperty.js 8.13 kB {0} [built]
+  [111] ./~/react/lib/ReactDOMComponentFlags.js 471 bytes {0} [built]
+  [112] ./~/react/lib/ReactDefaultInjection.js 3.4 kB {0} [built]
+  [113] ./~/react/lib/BeforeInputEventPlugin.js 13.9 kB {0} [built]
+  [114] ./~/react/lib/EventConstants.js 2.17 kB {0} [built]
+  [115] ./~/react/lib/EventPropagators.js 5.32 kB {0} [built]
+  [116] ./~/react/lib/EventPluginHub.js 8.32 kB {0} [built]
+  [117] ./~/react/lib/EventPluginRegistry.js 9.48 kB {0} [built]
+  [118] ./~/react/lib/EventPluginUtils.js 8.17 kB {0} [built]
+  [119] ./~/react/lib/ReactErrorUtils.js 2.26 kB {0} [built]
+  [120] ./~/react/lib/accumulateInto.js 1.73 kB {0} [built]
+  [121] ./~/react/lib/forEachAccumulated.js 893 bytes {0} [built]
+  [122] ./~/fbjs/lib/ExecutionEnvironment.js 1.06 kB {0} [built]
+  [123] ./~/react/lib/FallbackCompositionState.js 2.47 kB {0} [built]
+  [124] ./~/react/lib/getTextContentAccessor.js 997 bytes {0} [built]
+  [125] ./~/react/lib/SyntheticCompositionEvent.js 1.14 kB {0} [built]
+  [126] ./~/react/lib/SyntheticEvent.js 9.13 kB {0} [built]
+  [127] ./~/react/lib/SyntheticInputEvent.js 1.13 kB {0} [built]
+  [128] ./~/react/lib/ChangeEventPlugin.js 11.5 kB {0} [built]
+  [129] ./~/react/lib/ReactUpdates.js 9.6 kB {0} [built]
+  [130] ./~/react/lib/CallbackQueue.js 2.73 kB {0} [built]
+  [131] ./~/react/lib/ReactFeatureFlags.js 665 bytes {0} [built]
+  [132] ./~/react/lib/ReactReconciler.js 6.25 kB {0} [built]
+  [133] ./~/react/lib/ReactRef.js 2.47 kB {0} [built]
+  [134] ./~/react/lib/ReactOwner.js 3.6 kB {0} [built]
+  [135] ./~/react/lib/ReactInstrumentation.js 559 bytes {0} [built]
+  [136] ./~/react/lib/ReactDebugTool.js 9.98 kB {0} [built]
+  [137] ./~/react/lib/ReactInvalidSetStateWarningHook.js 1.03 kB {0} [built]
+  [138] ./~/react/lib/ReactHostOperationHistoryHook.js 860 bytes {0} [built]
+  [139] ./~/react/lib/ReactChildrenMutationWarningHook.js 1.66 kB {0} [built]
+  [140] ./~/fbjs/lib/performanceNow.js 845 bytes {0} [built]
+  [141] ./~/fbjs/lib/performance.js 588 bytes {0} [built]
+  [142] ./~/react/lib/Transaction.js 9.61 kB {0} [built]
+  [143] ./~/react/lib/getEventTarget.js 1.04 kB {0} [built]
+  [144] ./~/react/lib/isEventSupported.js 1.97 kB {0} [built]
+  [145] ./~/react/lib/isTextInputElement.js 1.08 kB {0} [built]
+  [146] ./~/react/lib/DefaultEventPluginOrder.js 1.26 kB {0} [built]
+  [147] ./~/react/lib/EnterLeaveEventPlugin.js 3.46 kB {0} [built]
+  [148] ./~/react/lib/SyntheticMouseEvent.js 2.18 kB {0} [built]
+  [149] ./~/react/lib/SyntheticUIEvent.js 1.61 kB {0} [built]
+  [150] ./~/react/lib/ViewportMetrics.js 641 bytes {0} [built]
+  [151] ./~/react/lib/getEventModifierState.js 1.27 kB {0} [built]
+  [152] ./~/react/lib/HTMLDOMPropertyConfig.js 5.38 kB {0} [built]
+  [153] ./~/react/lib/ReactComponentBrowserEnvironment.js 958 bytes {0} [built]
+  [154] ./~/react/lib/DOMChildrenOperations.js 7.3 kB {0} [built]
+  [155] ./~/react/lib/DOMLazyTree.js 3.75 kB {0} [built]
+  [156] ./~/react/lib/DOMNamespaces.js 538 bytes {0} [built]
+  [157] ./~/react/lib/setInnerHTML.js 3.91 kB {0} [built]
+  [158] ./~/react/lib/createMicrosoftUnsafeLocalFunction.js 864 bytes {0} [built]
+  [159] ./~/react/lib/setTextContent.js 1.4 kB {0} [built]
+  [160] ./~/react/lib/escapeTextContentForBrowser.js 3.48 kB {0} [built]
+  [161] ./~/react/lib/Danger.js 2.27 kB {0} [built]
+  [162] ./~/fbjs/lib/createNodesFromMarkup.js 2.66 kB {0} [built]
+  [163] ./~/fbjs/lib/createArrayFromMixed.js 4.11 kB {0} [built]
+  [164] ./~/fbjs/lib/getMarkupWrap.js 3.04 kB {0} [built]
+  [165] ./~/react/lib/ReactMultiChildUpdateTypes.js 864 bytes {0} [built]
+  [166] ./~/react/lib/ReactDOMIDOperations.js 996 bytes {0} [built]
+  [167] ./~/react/lib/ReactDOMComponent.js 38.9 kB {0} [built]
+  [168] ./~/react/lib/AutoFocusUtils.js 633 bytes {0} [built]
+  [169] ./~/fbjs/lib/focusNode.js 704 bytes {0} [built]
+  [170] ./~/react/lib/CSSPropertyOperations.js 6.85 kB {0} [built]
+  [171] ./~/react/lib/CSSProperty.js 3.69 kB {0} [built]
+  [172] ./~/fbjs/lib/camelizeStyleName.js 1 kB {0} [built]
+  [173] ./~/fbjs/lib/camelize.js 708 bytes {0} [built]
+  [174] ./~/react/lib/dangerousStyleValue.js 3.06 kB {0} [built]
+  [175] ./~/fbjs/lib/hyphenateStyleName.js 974 bytes {0} [built]
+  [176] ./~/fbjs/lib/hyphenate.js 800 bytes {0} [built]
+  [177] ./~/fbjs/lib/memoizeStringOnly.js 698 bytes {0} [built]
+  [178] ./~/react/lib/DOMPropertyOperations.js 7.41 kB {0} [built]
+  [179] ./~/react/lib/quoteAttributeValueForBrowser.js 749 bytes {0} [built]
+  [180] ./~/react/lib/ReactBrowserEventEmitter.js 12.5 kB {0} [built]
+  [181] ./~/react/lib/ReactEventEmitterMixin.js 1 kB {0} [built]
+  [182] ./~/react/lib/getVendorPrefixedEventName.js 2.92 kB {0} [built]
+  [183] ./~/react/lib/ReactDOMButton.js 634 bytes {0} [built]
+  [184] ./~/react/lib/DisabledInputUtils.js 1.16 kB {0} [built]
+  [185] ./~/react/lib/ReactDOMInput.js 12.1 kB {0} [built]
+  [186] ./~/react/lib/LinkedValueUtils.js 5.28 kB {0} [built]
+  [187] ./~/react/lib/ReactDOMOption.js 3.73 kB {0} [built]
+  [188] ./~/react/lib/ReactDOMSelect.js 6.94 kB {0} [built]
+  [189] ./~/react/lib/ReactDOMTextarea.js 6.36 kB {0} [built]
+  [190] ./~/react/lib/ReactMultiChild.js 14.8 kB {0} [built]
+  [191] ./~/react/lib/ReactComponentEnvironment.js 1.34 kB {0} [built]
+  [192] ./~/react/lib/ReactInstanceMap.js 1.26 kB {0} [built]
+  [193] ./~/react/lib/ReactChildReconciler.js 6.13 kB {0} [built]
+  [194] ./~/react/lib/instantiateReactComponent.js 4.81 kB {0} [built]
+  [195] ./~/react/lib/ReactCompositeComponent.js 36.7 kB {0} [built]
+  [196] ./~/react/lib/ReactNodeTypes.js 1.06 kB {0} [built]
+  [197] ./~/fbjs/lib/shallowEqual.js 1.66 kB {0} [built]
+  [198] ./~/react/lib/shouldUpdateReactComponent.js 1.45 kB {0} [built]
+  [199] ./~/react/lib/ReactEmptyComponent.js 743 bytes {0} [built]
+  [200] ./~/react/lib/ReactHostComponent.js 2.42 kB {0} [built]
+  [201] ./~/react/lib/flattenChildren.js 2.79 kB {0} [built]
+  [202] ./~/react/lib/ReactServerRenderingTransaction.js 2.35 kB {0} [built]
+  [203] ./~/react/lib/ReactServerUpdateQueue.js 4.95 kB {0} [built]
+  [204] ./~/react/lib/ReactUpdateQueue.js 9.03 kB {0} [built]
+  [205] ./~/react/lib/validateDOMNesting.js 13.1 kB {0} [built]
+  [206] ./~/react/lib/ReactDOMEmptyComponent.js 1.94 kB {0} [built]
+  [207] ./~/react/lib/ReactDOMTreeTraversal.js 3.74 kB {0} [built]
+  [208] ./~/react/lib/ReactDOMTextComponent.js 5.84 kB {0} [built]
+  [209] ./~/react/lib/ReactDefaultBatchingStrategy.js 1.92 kB {0} [built]
+  [210] ./~/react/lib/ReactEventListener.js 5.38 kB {0} [built]
+  [211] ./~/fbjs/lib/EventListener.js 2.67 kB {0} [built]
+  [212] ./~/fbjs/lib/getUnboundedScrollPosition.js 1.05 kB {0} [built]
+  [213] ./~/react/lib/ReactInjection.js 1.31 kB {0} [built]
+  [214] ./~/react/lib/ReactReconcileTransaction.js 5.31 kB {0} [built]
+  [215] ./~/react/lib/ReactInputSelection.js 4.31 kB {0} [built]
+  [216] ./~/react/lib/ReactDOMSelection.js 6.81 kB {0} [built]
+  [217] ./~/react/lib/getNodeForCharacterOffset.js 1.66 kB {0} [built]
+  [218] ./~/fbjs/lib/containsNode.js 1.05 kB {0} [built]
+  [219] ./~/fbjs/lib/isTextNode.js 605 bytes {0} [built]
+  [220] ./~/fbjs/lib/isNode.js 693 bytes {0} [built]
+  [221] ./~/fbjs/lib/getActiveElement.js 895 bytes {0} [built]
+  [222] ./~/react/lib/SVGDOMPropertyConfig.js 7.36 kB {0} [built]
+  [223] ./~/react/lib/SelectEventPlugin.js 6.49 kB {0} [built]
+  [224] ./~/react/lib/SimpleEventPlugin.js 18.9 kB {0} [built]
+  [225] ./~/react/lib/SyntheticAnimationEvent.js 1.25 kB {0} [built]
+  [226] ./~/react/lib/SyntheticClipboardEvent.js 1.21 kB {0} [built]
+  [227] ./~/react/lib/SyntheticFocusEvent.js 1.1 kB {0} [built]
+  [228] ./~/react/lib/SyntheticKeyboardEvent.js 2.75 kB {0} [built]
+  [229] ./~/react/lib/getEventCharCode.js 1.54 kB {0} [built]
+  [230] ./~/react/lib/getEventKey.js 2.9 kB {0} [built]
+  [231] ./~/react/lib/SyntheticDragEvent.js 1.11 kB {0} [built]
+  [232] ./~/react/lib/SyntheticTouchEvent.js 1.32 kB {0} [built]
+  [233] ./~/react/lib/SyntheticTransitionEvent.js 1.27 kB {0} [built]
+  [234] ./~/react/lib/SyntheticWheelEvent.js 1.98 kB {0} [built]
+  [235] ./~/react/lib/ReactMount.js 25.5 kB {0} [built]
+  [236] ./~/react/lib/ReactDOMContainerInfo.js 1.01 kB {0} [built]
+  [237] ./~/react/lib/ReactDOMFeatureFlags.js 460 bytes {0} [built]
+  [238] ./~/react/lib/ReactMarkupChecksum.js 1.51 kB {0} [built]
+  [239] ./~/react/lib/adler32.js 1.22 kB {0} [built]
+  [240] ./~/react/lib/findDOMNode.js 2.49 kB {0} [built]
+  [241] ./~/react/lib/getHostComponentFromComposite.js 789 bytes {0} [built]
+  [242] ./~/react/lib/renderSubtreeIntoContainer.js 466 bytes {0} [built]
+  [243] ./~/react/lib/ReactDOMUnknownPropertyHook.js 4.36 kB {0} [built]
+  [244] ./~/react/lib/ReactDOMNullInputValuePropHook.js 1.41 kB {0} [built]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 6c328a657a548a200769
+Version: webpack 1.12.15
+Time: 2754ms
+    Asset     Size  Chunks             Chunk Names
+bundle.js  2.53 MB       0  [emitted]  main
+chunk    {0} bundle.js (main) 916 kB [rendered]
+   [74] ./app/App.js 2.23 kB {0} [built]
+     + 244 hidden modules
+webpack: bundle is now VALID.
+
+
+set NODE_ENV=production in Windows
+
+http://stackoverflow.com/questions/9249830/how-can-i-set-node-env-production-in-windows
+
+
+
+trying to avoid webpack in the devDependencies gives
+
++-- UNMET PEER DEPENDENCY webpack@1 || ^2.1.0-beta
+
+npm WARN EPEERINVALID babel-loader@6.2.5 requires a peer of webpack@1 || ^2.1.0-beta but none was installed.
+npm WARN EPACKAGEJSON react-SB@0.0.0 No repository field.
+
+

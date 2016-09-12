@@ -1,0 +1,13 @@
+
+
+C:\apache\htdocs\react-SB>npm install --save wordpress-rest-api-oauth-1
+npm WARN install Couldn't install optional dependency: Unsupported
+react-SB@0.0.0 C:\apache\htdocs\react-SB
++-- wordpress-rest-api-oauth-1@1.0.8
+  +-- oauth-1.0a@1.0.1
+  ¦ +-- crypto-js@3.1.6
+  +-- qs@6.2.1
+
+npm WARN EPACKAGEJSON react-SB@0.0.0 No repository field.
+
+

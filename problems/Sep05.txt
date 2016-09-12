@@ -1,0 +1,264 @@
+
+C:\apache\htdocs\react\chapter1>npm start
+
+> chapter1@1.0.0 start C:\apache\htdocs\react\chapter1
+> webpack-dev-server --progress
+
+ 70% 1/1 build moduleshttp://localhost:8080/
+webpack result is served from /
+content is served from ./public
+404s will fallback to /index.html
+Hash: 055c71ecded3697cdd8d
+Version: webpack 1.12.15
+Time: 2907ms
+    Asset    Size  Chunks             Chunk Names
+bundle.js  621 kB       0  [emitted]  main
+chunk    {0} bundle.js (main) 217 kB [rendered]
+    [0] multi main 40 bytes {0} [built] [1 error]
+    [1] (webpack)-dev-server/client?http://localhost:8080 2.67 kB {0} [built]
+    [2] ./~/url/url.js 22.3 kB {0} [built]
+    [3] ./~/url/~/punycode/punycode.js 14.6 kB {0} [built]
+    [4] (webpack)/buildin/module.js 251 bytes {0} [built]
+    [5] ./~/querystring/index.js 127 bytes {0} [built]
+    [6] ./~/querystring/decode.js 2.4 kB {0} [built]
+    [7] ./~/querystring/encode.js 2.09 kB {0} [built]
+    [8] ./~/sockjs-client/lib/entry.js 244 bytes {0} [built]
+    [9] ./~/sockjs-client/lib/transport-list.js 613 bytes {0} [built]
+   [10] ./~/sockjs-client/lib/transport/websocket.js 2.71 kB {0} [built]
+   [11] ./~/process/browser.js 5.3 kB {0} [built]
+   [12] ./~/sockjs-client/lib/utils/event.js 2 kB {0} [built]
+   [13] ./~/sockjs-client/lib/utils/random.js 746 bytes {0} [built]
+   [14] ./~/sockjs-client/lib/utils/browser-crypto.js 438 bytes {0} [built]
+   [15] ./~/sockjs-client/lib/utils/url.js 975 bytes {0} [built]
+   [16] ./~/url-parse/index.js 8.55 kB {0} [built]
+   [17] ./~/requires-port/index.js 753 bytes {0} [built]
+   [18] ./~/url-parse/lolcation.js 1.58 kB {0} [built]
+   [19] ./~/querystringify/index.js 1.3 kB {0} [built]
+   [20] ./~/debug/browser.js 3.76 kB {0} [built]
+   [21] ./~/debug/debug.js 4.1 kB {0} [built]
+   [22] ./~/ms/index.js 2.33 kB {0} [built]
+   [23] ./~/inherits/inherits_browser.js 672 bytes {0} [built]
+   [24] ./~/sockjs-client/lib/event/emitter.js 1.27 kB {0} [built]
+   [25] ./~/sockjs-client/lib/event/eventtarget.js 1.85 kB {0} [built]
+   [26] ./~/sockjs-client/lib/transport/browser/websocket.js 172 bytes {0} [built]
+   [27] ./~/sockjs-client/lib/transport/xhr-streaming.js 1.25 kB {0} [built]
+   [28] ./~/sockjs-client/lib/transport/lib/ajax-based.js 1.31 kB {0} [built]
+   [29] ./~/sockjs-client/lib/transport/lib/sender-receiver.js 1.15 kB {0} [built]
+   [30] ./~/sockjs-client/lib/transport/lib/buffered-sender.js 2.3 kB {0} [built]
+   [31] ./~/sockjs-client/lib/transport/lib/polling.js 1.32 kB {0} [built]
+   [32] ./~/sockjs-client/lib/transport/receiver/xhr.js 1.58 kB {0} [built]
+   [33] ./~/sockjs-client/lib/transport/sender/xhr-cors.js 343 bytes {0} [built]
+   [34] ./~/sockjs-client/lib/transport/browser/abstract-xhr.js 4.8 kB {0} [built]
+   [35] ./~/sockjs-client/lib/transport/sender/xhr-local.js 352 bytes {0} [built]
+   [36] ./~/sockjs-client/lib/utils/browser.js 560 bytes {0} [built]
+   [37] ./~/sockjs-client/lib/transport/xdr-streaming.js 984 bytes {0} [built]
+   [38] ./~/sockjs-client/lib/transport/sender/xdr.js 2.46 kB {0} [built]
+   [39] ./~/sockjs-client/lib/transport/eventsource.js 766 bytes {0} [built]
+   [40] ./~/sockjs-client/lib/transport/receiver/eventsource.js 1.58 kB {0} [built]
+   [41] ./~/sockjs-client/lib/transport/browser/eventsource.js 37 bytes {0} [built]
+   [42] ./~/sockjs-client/lib/transport/lib/iframe-wrap.js 981 bytes {0} [built]
+   [43] ./~/sockjs-client/lib/transport/iframe.js 3.83 kB {0} [built]
+   [44] ./~/json3/lib/json3.js 43.3 kB {0} [built]
+   [45] (webpack)/buildin/amd-options.js 43 bytes {0} [built]
+   [46] ./~/sockjs-client/lib/version.js 26 bytes {0} [built]
+   [47] ./~/sockjs-client/lib/utils/iframe.js 5.06 kB {0} [built]
+   [48] ./~/sockjs-client/lib/utils/object.js 532 bytes {0} [built]
+   [49] ./~/sockjs-client/lib/transport/htmlfile.js 710 bytes {0} [built]
+   [50] ./~/sockjs-client/lib/transport/receiver/htmlfile.js 2.2 kB {0} [built]
+   [51] ./~/sockjs-client/lib/transport/xhr-polling.js 894 bytes {0} [built]
+   [52] ./~/sockjs-client/lib/transport/xdr-polling.js 712 bytes {0} [built]
+   [53] ./~/sockjs-client/lib/transport/jsonp-polling.js 1.02 kB {0} [built]
+   [54] ./~/sockjs-client/lib/transport/receiver/jsonp.js 5.57 kB {0} [built]
+   [55] ./~/sockjs-client/lib/transport/sender/jsonp.js 2.46 kB {0} [built]
+   [56] ./~/sockjs-client/lib/main.js 11.9 kB {0} [built]
+   [57] ./~/sockjs-client/lib/shims.js 18.2 kB {0} [built]
+   [58] ./~/sockjs-client/lib/utils/escape.js 2.31 kB {0} [built]
+   [59] ./~/sockjs-client/lib/utils/transport.js 1.35 kB {0} [built]
+   [60] ./~/sockjs-client/lib/utils/log.js 450 bytes {0} [built]
+   [61] ./~/sockjs-client/lib/event/event.js 477 bytes {0} [built]
+   [62] ./~/sockjs-client/lib/location.js 177 bytes {0} [built]
+   [63] ./~/sockjs-client/lib/event/close.js 295 bytes {0} [built]
+   [64] ./~/sockjs-client/lib/event/trans-message.js 292 bytes {0} [built]
+   [65] ./~/sockjs-client/lib/info-receiver.js 2.22 kB {0} [built]
+   [66] ./~/sockjs-client/lib/transport/sender/xhr-fake.js 456 bytes {0} [built]
+   [67] ./~/sockjs-client/lib/info-iframe.js 1.52 kB {0} [built]
+   [68] ./~/sockjs-client/lib/info-iframe-receiver.js 791 bytes {0} [built]
+   [69] ./~/sockjs-client/lib/info-ajax.js 1.03 kB {0} [built]
+   [70] ./~/sockjs-client/lib/iframe-bootstrap.js 2.9 kB {0} [built]
+   [71] ./~/sockjs-client/lib/facade.js 723 bytes {0} [built]
+   [72] ./~/strip-ansi/index.js 161 bytes {0} [built]
+   [73] ./~/ansi-regex/index.js 135 bytes {0} [built]
+
+ERROR in multi main
+Module not found: Error: Cannot resolve 'file' or 'directory' C:\apache\htdocs\react\chapter1/app/App.js in C:\apache\htdocs\react\chapter1
+ @ multi main
+webpack: bundle is now VALID.
+
+
+npm install
+
+
+npm WARN deprecated minimatch@2.0.10: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+npm WARN install Couldn't install optional dependency: Unsupported
+
+
+
+npm WARN EPACKAGEJSON react-app-boilerplate@0.1.4 No repository field.
+
+C:\github\pro-react\sample-code\chapter 1\groceryList>npm start
+
+> react-app-boilerplate@0.1.4 start C:\github\pro-react\sample-code\chapter 1\groceryList
+> webpack-dev-server --progress
+
+ 70% 1/1 build modulesevents.js:154
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE 127.0.0.1:8080
+    at Object.exports._errnoException (util.js:856:11)
+    at exports._exceptionWithHostPort (util.js:879:20)
+    at Server._listen2 (net.js:1236:14)
+    at listen (net.js:1272:10)
+    at net.js:1381:9
+    at GetAddrInfoReqWrap.asyncCallback [as callback] (dns.js:63:16)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:82:10)
+
+npm ERR! Windows_NT 10.0.10586
+npm ERR! argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
+npm ERR! node v5.5.0
+npm ERR! npm  v3.3.12
+npm ERR! code ELIFECYCLE
+npm ERR! react-app-boilerplate@0.1.4 start: `webpack-dev-server --progress`
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the react-app-boilerplate@0.1.4 start script 'webpack-dev-server --progress'.
+npm ERR! Make sure you have the latest version of node.js and npm installed.
+npm ERR! If you do, this is most likely a problem with the react-app-boilerplate package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     webpack-dev-server --progress
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls react-app-boilerplate
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     C:\github\pro-react\sample-code\chapter 1\groceryList\npm-debug.log
+
+
+ERROR in ./app/App.js
+Module build failed: SyntaxError: C:/apache/htdocs/react/chapter1/app/App.js: Unexpected token (11:58)
+
+   9 | }
+  10 |
+> 11 | React.render( <Hello />, document.getElementById( 'root' );
+     |                                                           ^
+  12 |
+
+ @ multi main
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 039bd252b517ca342566
+Version: webpack 1.12.15
+Time: 2428ms
+    Asset    Size  Chunks             Chunk Names
+bundle.js  981 kB       0  [emitted]  main
+chunk    {0} bundle.js (main) 350 kB [rendered]
+   [74] ./app/App.js 2.22 kB {0} [built]
+   [75] ./~/react/react.js 56 bytes {0} [built]
+   [76] ./~/react/lib/React.js 2.72 kB {0} [built]
+   [77] ./~/object-assign/index.js 1.99 kB {0} [built]
+   [78] ./~/react/lib/ReactChildren.js 6.22 kB {0} [built]
+   [79] ./~/react/lib/PooledClass.js 3.59 kB {0} [built]
+   [80] ./~/react/lib/reactProdInvariant.js 1.27 kB {0} [built]
+   [81] ./~/fbjs/lib/invariant.js 1.49 kB {0} [built]
+   [82] ./~/react/lib/ReactElement.js 12.5 kB {0} [built]
+   [83] ./~/react/lib/ReactCurrentOwner.js 657 bytes {0} [built]
+   [84] ./~/fbjs/lib/warning.js 2.1 kB {0} [built]
+   [85] ./~/fbjs/lib/emptyFunction.js 1.08 kB {0} [built]
+   [86] ./~/react/lib/canDefineProperty.js 632 bytes {0} [built]
+   [87] ./~/react/lib/traverseAllChildren.js 6.74 kB {0} [built]
+   [88] ./~/react/lib/getIteratorFn.js 1.15 kB {0} [built]
+   [89] ./~/react/lib/KeyEscapeUtils.js 1.33 kB {0} [built]
+   [90] ./~/react/lib/ReactComponent.js 4.64 kB {0} [built]
+   [91] ./~/react/lib/ReactNoopUpdateQueue.js 3.4 kB {0} [built]
+   [92] ./~/fbjs/lib/emptyObject.js 458 bytes {0} [built]
+   [93] ./~/react/lib/ReactPureComponent.js 1.36 kB {0} [built]
+   [94] ./~/react/lib/ReactClass.js 27.2 kB {0} [built]
+   [95] ./~/react/lib/ReactPropTypeLocations.js 552 bytes {0} [built]
+   [96] ./~/fbjs/lib/keyMirror.js 1.25 kB {0} [built]
+   [97] ./~/react/lib/ReactPropTypeLocationNames.js 614 bytes {0} [built]
+   [98] ./~/fbjs/lib/keyOf.js 1.1 kB {0} [built]
+   [99] ./~/react/lib/ReactDOMFactories.js 5.56 kB {0} [built]
+  [100] ./~/react/lib/ReactElementValidator.js 8.08 kB {0} [built]
+  [101] ./~/react/lib/ReactComponentTreeHook.js 10.1 kB {0} [built]
+  [102] ./~/react/lib/checkReactTypeSpec.js 4.23 kB {0} [built]
+  [103] ./~/react/lib/ReactPropTypesSecret.js 478 bytes {0} [built]
+  [104] ./~/react/lib/ReactPropTypes.js 15.6 kB {0} [built]
+  [105] ./~/react/lib/ReactVersion.js 382 bytes {0} [built]
+  [106] ./~/react/lib/onlyChild.js 1.37 kB {0} [built]
+     + 74 hidden modules
+webpack: bundle is now VALID.
+
+
+Uncaught TypeError: _react2.default.render is not a function
+
+http://stackoverflow.com/questions/26627665/error-with-basic-react-example-uncaught-typeerror-undefined-is-not-a-function
+
+
+App.js?4119:11 Uncaught ReferenceError: 
+ReactDOM is not defined
+(anonymous function) @ App.js?4119:11
+(anonymous function) @ bundle.js:493
+__webpack_require__  @ bundle.js:20
+(anonymous function) @ bundle.js:48
+__webpack_require__  @ bundle.js:20
+(anonymous function) @ bundle.js:40
+(anonymous function) @ bundle.js:43
+
+
+
+Download the React DevTools for a better development experience: https://fb.me/react-devtools
+
+
+C:\apache\htdocs\react\chapter1>npm run build
+
+> chapter1@1.0.0 build C:\apache\htdocs\react\chapter1
+> NODE_ENV=production node_modules/.bin/webpack -p --progress --colors
+
+'NODE_ENV' is not recognized as an internal or external command,
+operable program or batch file.
+
+npm ERR! Windows_NT 10.0.10586
+npm ERR! argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "build"
+npm ERR! node v5.5.0
+npm ERR! npm  v3.3.12
+npm ERR! code ELIFECYCLE
+npm ERR! chapter1@1.0.0 build: `NODE_ENV=production node_modules/.bin/webpack -p --progress --colors`
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the chapter1@1.0.0 build script 'NODE_ENV=production node_modules/.bin/webpack -p --progress --colors'.
+npm ERR! Make sure you have the latest version of node.js and npm installed.
+npm ERR! If you do, this is most likely a problem with the chapter1 package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     NODE_ENV=production node_modules/.bin/webpack -p --progress --colors
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls chapter1
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     C:\apache\htdocs\react\chapter1\npm-debug.log
+
+
+C:\apache\htdocs\react\chapter1>node_modules\.bin\webpack.cmd -p --progress --colors
+Hash: 9d5680d7478e01f8494d
+Version: webpack 1.12.15
+Time: 14126ms
+    Asset     Size  Chunks             Chunk Names
+bundle.js  1.92 MB       0  [emitted]  main
+    + 172 hidden modules
+
+
+
+
+
