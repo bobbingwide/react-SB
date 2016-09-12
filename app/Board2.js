@@ -20,35 +20,14 @@ import Side2 from './Side2';
 // Instead of getting passed the words array we now extract it from this.props.posts
 
 class Board2 extends Component {
-	constructor() {
-		super( ...arguments);
-		this.state = { letterS: 'B'
-								 , letterB: 'A'
-								 , wordS: false
-								 , wordB: false
-								 , SandBselected: false
-								 };
-	}
-
-	notifySideS( first, letter ) {
-		this.setState( { letterS: letter } );
-		///alert( "letterS: " + this.state.letterS );
-		//alert( "letterS:" );
-
-	}
-
-
-	notifySideB( first, letter ) {
-		this.setState( { letterB: letter } );
-	}
 
 	render() {
 		//let letters = [ 'A', 'B', 'C', 'D', 'E' ];
 		//let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 		return( 
 			<div className="app">
-			 <Side2 side="S" letters={this.props.s_letters} words={this.props.s_posts} letter={this.state.letterS} notifyBoard={this.props.notifySideS} />
-			 <Side2 side="B" letters={this.props.b_letters} words={this.props.b_posts} letter={this.state.letterB} notifyBoard={this.props.notifySideB} /> 
+			 <Side2 side="S" letters={this.props.s_letters} words={this.props.s_posts} letter={this.props.sletter} notifyBoard={this.props.notifySideS} />
+			 {/* <Side2 side="B" letters={this.props.b_letters} words={this.props.b_posts} letter={this.props.bletter} notifyBoard={this.props.notifySideB} /> */}
 			 {/* <Bigram /> */}
 			</div>
 		);
@@ -66,6 +45,8 @@ Board2.propTypes = {
 	b_letters: PropTypes.array,
 	notifySideS: PropTypes.func,
 	notifySideB: PropTypes.func,
+	sletter: PropTypes.string,
+	bletter: PropTypes.string,
  
 }
 
