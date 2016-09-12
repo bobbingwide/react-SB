@@ -20,10 +20,14 @@ import api from 'wordpress-rest-api-oauth-1';
 
 //const BIGRAM_URL = "http://qw/bigram/"
 // http://stackoverflow.com/questions/10143093/origin-is-not-allowed-by-access-control-allow-origin
-const BIGRAM_URL = "http://localhost/bigram/"
+// Using http://localhost doesn't work a lot of the time.
+const BIGRAM_URL = "http://qw/bigram/"
+
+const CALLBACK_URL = 'http://localhost:8080/'
 
 const demoApi = new api({
-    url: BIGRAM_URL
+    url: BIGRAM_URL,
+		callbackURL: CALLBACK_URL 
 			});
 
 class App extends Component {
@@ -53,12 +57,11 @@ class App extends Component {
 	 * Perform: http://qw/bigram/wp-json/wp/v2/bigram/?filter[s-letter]=A
 	 */
 	onSletter( sletter ) {
-		this.setState( { isLoading: true } );
+		//this.setState( { isLoading: true } );
 		demoApi.get( '/wp/v2/bigram/', { filter: { 's-letter': sletter } } )
 		.then( posts => { 
-			this.setState( {s_posts: posts } );
-			this.setState( {sletter: sletter } );
-			this.setState( {isLoading: false } );
+			this.setState( {s_posts: posts, sletter: sletter } );
+			//this.setState( {isLoading: false } );
 			 });
 	}
 
@@ -69,12 +72,11 @@ class App extends Component {
 	 * Perform: http://qw/bigram/wp-json/wp/v2/bigram/?filter[b-letter]=A
 	 */
 	onBletter( bletter ) {
-		this.setState( { isLoading: true } );
+		//this.setState( { isLoading: true } );
 		demoApi.get( '/wp/v2/bigram/', { filter: { 'b-letter': bletter } } )
 		.then( posts => { 
-			this.setState( {b_posts: posts } );
-			this.setState( {bletter: bletter } );
-			this.setState( {isLoading: false } );
+			this.setState( {b_posts: posts, bletter: bletter } );
+			//this.setState( {isLoading: false } );
 			 });
 	}
 
@@ -83,7 +85,6 @@ class App extends Component {
 	 *
 	 * Perform: http://qw/bigram/wp-json/wp/v2/s-letter/
 	 */
-
 	loadsletters() {
 		this.setState( { isLoading: true } );
 		demoApi.get( '/wp/v2/s-letter/', { per_page: 31 } )
@@ -120,6 +121,7 @@ class App extends Component {
 			<Board2 s_posts={this.state.s_posts} b_posts={this.state.b_posts} 
 				s_letters={this.state.s_letters} b_letters={this.state.b_letters} 
 				notifySideS={this.onSletter.bind( this )} notifySideB={this.onBletter.bind( this )}
+				sletter={this.state.sletter} bletter={this.state.bletter}
 			/>
 			</div> 
 			);
