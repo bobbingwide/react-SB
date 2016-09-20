@@ -16,18 +16,19 @@
 import React, { Component } from 'react';
 import {render} from 'react-dom';
 import Board2 from './Board2';
-import api from 'wordpress-rest-api-oauth-1';
+import api from './rest-api';
 
 //const BIGRAM_URL = "http://qw/bigram/"
 // http://stackoverflow.com/questions/10143093/origin-is-not-allowed-by-access-control-allow-origin
 // Using http://localhost doesn't work a lot of the time.
-const BIGRAM_URL = "http://qw/bigram/"
+const BIGRAM_URL = "http://localhost/bigram/"
 
 const CALLBACK_URL = 'http://localhost:8080/'
 
 const demoApi = new api({
     url: BIGRAM_URL,
-		callbackURL: CALLBACK_URL 
+		callbackURL: CALLBACK_URL, 
+    crossDomain : true,
 			});
 
 class App extends Component {
@@ -37,6 +38,8 @@ class App extends Component {
 		this.state = {
 			s_letters: [],
 			b_letters: [],
+			s_words: [],
+			b_words: [],
 			s_posts: [],
 			b_posts: [],
 			isLoading: false,
@@ -45,6 +48,8 @@ class App extends Component {
 		}
 	}
 	componentDidMount() {
+		this.loadallswords();
+		this.loadbwords();
 		this.loadsletters();
 		this.loadbletters();
 		this.onSletter( 'A' );
@@ -58,7 +63,7 @@ class App extends Component {
 	 */
 	onSletter( sletter ) {
 		//this.setState( { isLoading: true } );
-		demoApi.get( '/wp/v2/bigram/', { filter: { 's-letter': sletter } } )
+		demoApi.get( '/wp/v2/bigram/', { filter: { 's-letter': sletter }, _embed: true } )
 		.then( posts => { 
 			this.setState( {s_posts: posts, sletter: sletter } );
 			//this.setState( {isLoading: false } );
@@ -73,7 +78,7 @@ class App extends Component {
 	 */
 	onBletter( bletter ) {
 		//this.setState( { isLoading: true } );
-		demoApi.get( '/wp/v2/bigram/', { filter: { 'b-letter': bletter } } )
+		demoApi.get( '/wp/v2/bigram/', { filter: { 'b-letter': bletter }, _embed: true } )
 		.then( posts => { 
 			this.setState( {b_posts: posts, bletter: bletter } );
 			//this.setState( {isLoading: false } );
@@ -81,16 +86,49 @@ class App extends Component {
 	}
 
 	/**
+	 * Obtain all values for the S-word taxonomy
+	 */
+	loadswords( page ) {
+		demoApi.get( '/wp/v2/s-word/', { page: page } )
+			.then( terms => { 
+				let concatterms = this.state.s_words.concat( terms );
+				this.setState( {s_words: concatterms } );
+		});
+	}
+
+	/**
+	 * 
+	 */
+	loadallswords() {
+		let page = 1;
+		this.loadswords( page );
+		page = 2;
+		this.loadswords( page ); 
+	}
+		 
+	/**
+	 * Obtain all values for the B-word taxonomy
+	 */
+	loadbwords() {
+		demoApi.get( '/wp/v2/b-word/', {  } )
+			.then( terms => { 
+				this.setState( { b_words: terms } );
+		});
+	}
+
+
+
+	/**
 	 * Obtain all values for the s-letter taxonomy
 	 *
 	 * Perform: http://qw/bigram/wp-json/wp/v2/s-letter/
 	 */
 	loadsletters() {
-		this.setState( { isLoading: true } );
-		demoApi.get( '/wp/v2/s-letter/', { per_page: 31 } )
+		//this.setState( { isLoading: true } );
+		demoApi.get( '/wp/v2/s-letter/', { per_page: 31, page: 1 } )
 			.then( terms => { 
 				this.setState( {s_letters: terms } );
-				this.setState( {isLoading: false } );
+				//this.setState( {isLoading: false } );
 			 });
 	}
 
@@ -100,11 +138,11 @@ class App extends Component {
 	 * Perform: http://qw/bigram/wp-json/wp/v2/b-letter/
 	 */
 	loadbletters() {		
-		this.setState( { isLoading: true } );
-		demoApi.get( '/wp/v2/b-letter/', { per_page: 31 } )
+		//this.setState( { isLoading: true } );
+		demoApi.get( '/wp/v2/b-letter/', { per_page: 31, page: 1 } )
 			.then( terms => { 
 				this.setState( {b_letters: terms } );
-				this.setState( {isLoading: false } );
+				//this.setState( {isLoading: false } );
 			 });
 
 	}
@@ -119,7 +157,8 @@ class App extends Component {
 		return( 
 			<div className="app">
 			<Board2 s_posts={this.state.s_posts} b_posts={this.state.b_posts} 
-				s_letters={this.state.s_letters} b_letters={this.state.b_letters} 
+				s_letters={this.state.s_letters} b_letters={this.state.b_letters}
+				s_words={this.state.s_words} b_words={this.state.b_words}
 				notifySideS={this.onSletter.bind( this )} notifySideB={this.onBletter.bind( this )}
 				sletter={this.state.sletter} bletter={this.state.bletter}
 			/>
