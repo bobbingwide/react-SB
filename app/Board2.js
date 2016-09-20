@@ -26,8 +26,8 @@ class Board2 extends Component {
 		//let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 		return( 
 			<div className="app">
-			 <Side2 side="S" letters={this.props.s_letters} words={this.props.s_posts} letter={this.props.sletter} notifyBoard={this.props.notifySideS} />
-			 {/* <Side2 side="B" letters={this.props.b_letters} words={this.props.b_posts} letter={this.props.bletter} notifyBoard={this.props.notifySideB} /> */}
+			 <Side2 side="S" letters={this.props.s_letters} posts={this.props.s_posts} letter={this.props.sletter} notifyBoard={this.props.notifySideS} words={this.props.s_words} />
+			 <Side2 side="B" letters={this.props.b_letters} posts={this.props.b_posts} letter={this.props.bletter} notifyBoard={this.props.notifySideB} words={this.props.b_words} /> 
 			 {/* <Bigram /> */}
 			</div>
 		);
@@ -41,6 +41,8 @@ class Board2 extends Component {
 Board2.propTypes = {
 	s_posts: PropTypes.array,
 	b_posts: PropTypes.array,
+	s_words: PropTypes.array,
+	b_words: PropTypes.array,
 	s_letters: PropTypes.array,
 	b_letters: PropTypes.array,
 	notifySideS: PropTypes.func,
