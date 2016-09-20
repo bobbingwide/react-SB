@@ -34,11 +34,15 @@ class Item extends Component {
 
 	}
 	render() {
-		//console.log( "Link" + this.props.data.name);
+		console.log( "Words & Data", this.props.words[0], this.props.data );
+		let word = this.props.words.filter( ( word ) => word.id === this.props.data['s-word'][0]);
 		return(
 		<li onClick={this.handleClick.bind(this, this.props.data.name )}>
 		{this.props.data.id}
-		{this.props.data.name}
+		{this.props.data.title.rendered}
+		{this.props.data['s-word'][0]}
+		{word.id}
+		{word.name}
 		</li>
 		);
 	}
@@ -53,11 +57,11 @@ class Items2 extends Component {
 
 
 	render() {
-		console.log( this.props.words );
+		console.log( this.props.posts );
 
-		let links = this.props.words.map(( word ) => { 
+		let links = this.props.posts.map(( post ) => { 
 			return (
-			<Item key={word.id} data={word} notifyBoard={this.props.notifyBoard}	/>
+			<Item key={post.id} data={post} notifyBoard={this.props.notifyBoard} words={this.props.words} />
 				)
 		});
 
@@ -71,6 +75,7 @@ class Items2 extends Component {
 
 Items2.propTypes = {
 	first: PropTypes.string.isRequired,
+	posts: PropTypes.array.isRequired,
 	words: PropTypes.array.isRequired,
 	letter: PropTypes.string.isRequired,
 	notifyBoard: PropTypes.func.isRequired
