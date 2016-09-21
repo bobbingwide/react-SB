@@ -31,12 +31,20 @@ class WordItem extends Component {
 	}
 	render() {
 		console.log( "Data", this.props.data );
-		//let word = this.props.words.filter( ( word ) => word.id === this.props.data['s-word'][0]);
+		console.log( "First", this.props.first );
+		let name = '';
+		if ( this.props.first == "S" ) {
+			name = this.props.data._embedded['wp:term'][1][0].name;
+			console.log( '!' + name + '!' );
+		} else {
+			name = this.props.data._embedded['wp:term'][2][0].name;
+		}
+		console.log( "NME", name,);
+		  //let word = this.props.words.filter( ( word ) => word.id === this.props.data['s-word'][0]);
+		//{this.props.data['s-word'][0]}
 		return(
 		<li onClick={this.handleClick.bind(this, this.props.data.name )}>
-		{this.props.data.id}
-		{this.props.data.title.rendered}
-		{this.props.data['s-word'][0]}
+		{name}
 		</li>
 		);
 	}
