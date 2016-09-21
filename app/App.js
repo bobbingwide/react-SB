@@ -43,16 +43,16 @@ class App extends Component {
 			s_posts: [],
 			b_posts: [],
 			isLoading: false,
-		  sletter: 'A',
-			bletter: 'A',
+		  sletter: '',
+			bletter: '',
 		}
 	}
 	componentDidMount() {
-		this.loadallswords();
-		this.loadbwords();
+		//this.loadallswords();
+		//this.loadbwords();
 		this.loadsletters();
 		this.loadbletters();
-		this.onSletter( 'A' );
+		//this.onSletter( 'A' );
 		//this.onBletter( 'A' );
 	}
 
