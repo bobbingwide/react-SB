@@ -28,7 +28,7 @@ class Side2 extends Component {
 			<div className="side" >
 			<h1>{this.props.side}</h1>
 				<Links2 first={this.props.side} letters={this.props.letters} letter={this.props.letter} notifyBoard={this.props.notifyBoard} />
-				<Items2 first={this.props.side} posts={this.props.posts} letter={this.props.letter} notifyBoard={this.props.notifyBoard} words={this.props.words} />
+				<Items2 first={this.props.side} posts={this.props.posts} letter={this.props.letter} notifyBoard={this.props.notifyBoard}  />
 		  </div>
 		);
 	}

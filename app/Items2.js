@@ -20,48 +20,17 @@
  
  
 import React, { Component, PropTypes } from 'react';
-
-class Item extends Component {
-
-	/**
-	 * How do we notify the Side what's been selected
-	 * 
-	 * OK. so we get the letter that's been clicked and now we use a callback to notify the Board!
-	 */
-	handleClick( letter) {
-			//alert( "Wow: " + letter );
-			this.props.notifyBoard( letter );
-
-	}
-	render() {
-		console.log( "Words & Data", this.props.words[0], this.props.data );
-		let word = this.props.words.filter( ( word ) => word.id === this.props.data['s-word'][0]);
-		return(
-		<li onClick={this.handleClick.bind(this, this.props.data.name )}>
-		{this.props.data.id}
-		{this.props.data.title.rendered}
-		{this.props.data['s-word'][0]}
-		{word.id}
-		{word.name}
-		</li>
-		);
-	}
-}
-
-Item.propTypes = {
-	notifyBoard: PropTypes.func.isRequired,
-	data: PropTypes.object.isRequired
-}
+import WordItem from './WordItem.js';
 
 class Items2 extends Component {
 
 
 	render() {
-		console.log( this.props.posts );
+		console.log( "Item2 props", this.props );
 
 		let links = this.props.posts.map(( post ) => { 
 			return (
-			<Item key={post.id} data={post} notifyBoard={this.props.notifyBoard} words={this.props.words} />
+			<WordItem key={post.id} data={post} notifyBoard={this.props.notifyBoard} first={this.props.first}  />
 				)
 		});
 
@@ -76,8 +45,6 @@ class Items2 extends Component {
 Items2.propTypes = {
 	first: PropTypes.string.isRequired,
 	posts: PropTypes.array.isRequired,
-	words: PropTypes.array.isRequired,
-	letter: PropTypes.string.isRequired,
 	notifyBoard: PropTypes.func.isRequired
 }
 
