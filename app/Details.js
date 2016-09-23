@@ -7,6 +7,7 @@
  *
  */
 import React, { Component, PropTypes } from 'react';
+import Image from './Image';
 
 
 class Details extends Component {
@@ -21,17 +22,30 @@ class Details extends Component {
 		return( { __html: post.content.rendered} );
 	}
 
+	/**
+	 * Render the Content, if there is any
+
+		let post = this.props.post || [{ slug:null, content: { rendered: null }, title: { rendered: null } }];
+	 */
+
 
 	render() {
-		let post = this.props.post || [{ slug:null, content: { rendered: null }, title: { rendered: null } }];
-		post = post[0];
+		let post = null;
+		if ( this.props.post ) {
+			post = this.props.post[0];
+		}
 		console.log( this.props );
-		return( 
-			<div className="details" >
-			<h2>{post.title.rendered}</h2>
-				<span dangerouslySetInnerHTML={ this.content( post ) } />
-		  </div>
-		);
+		if ( post ) {
+			return( 
+				<div className="details" >
+				<h2>{post.title.rendered}</h2>
+					<div dangerouslySetInnerHTML={ this.content( post ) } />
+						<Image post={post} />
+			 </div>
+			);
+		} else {
+				return( <div className="details" >Select something</div> );
+		}
 	}
 }
 
