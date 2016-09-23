@@ -40,3 +40,17 @@ div.details {
 	background-color: #eeeeee;
 }
 
+div.content {
+	float: left;
+	width: 50%;
+}
+
+div.featured {
+	float: left;
+	width: 50%;
+}
+
+div.featured img {
+	max-width: 100%;
+}
+

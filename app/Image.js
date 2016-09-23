@@ -14,12 +14,15 @@ class Image extends Component {
 
 
 	render() {
-		console.log( this.props );
-		let image = this.props.post._embedded['wp:featuredmedia'][0];
+		console.log( "This.props",  this.props );
+		let image = null;
+		if ( this.props.post._embedded['wp:featuredmedia'] ) {
+			image = this.props.post._embedded['wp:featuredmedia'][0];
+		}
 		console.log( "image", image );
 		if ( image ) {
 			return( 
-				<img src={image.id} />
+				<img src={image.source_url} />
 				);
 		} else {
 			return( <p>No image</p> );

@@ -39,8 +39,10 @@ class Details extends Component {
 			return( 
 				<div className="details" >
 				<h2>{post.title.rendered}</h2>
-					<div dangerouslySetInnerHTML={ this.content( post ) } />
+					<div className="content" dangerouslySetInnerHTML={ this.content( post ) } />
+					<div className="featured">
 						<Image post={post} />
+					</div>
 			 </div>
 			);
 		} else {
