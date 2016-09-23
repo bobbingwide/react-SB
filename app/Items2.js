@@ -30,7 +30,7 @@ class Items2 extends Component {
 
 		let links = this.props.posts.map(( post ) => { 
 			return (
-			<WordItem key={post.id} data={post} notifyBoard={this.props.notifyBoard} first={this.props.first}  />
+			<WordItem key={post.id} data={post} notifyPost={this.props.notifyPost} first={this.props.first}  />
 				)
 		});
 
@@ -45,7 +45,7 @@ class Items2 extends Component {
 Items2.propTypes = {
 	first: PropTypes.string.isRequired,
 	posts: PropTypes.array.isRequired,
-	notifyBoard: PropTypes.func.isRequired
+	notifyPost: PropTypes.func.isRequired
 }
 
 export default Items2;

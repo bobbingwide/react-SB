@@ -45,6 +45,7 @@ class App extends Component {
 			isLoading: false,
 		  sletter: '',
 			bletter: '',
+			post: null,
 		}
 	}
 	componentDidMount() {
@@ -147,6 +148,14 @@ class App extends Component {
 
 	}
 
+	/**
+	 * NotifyPost
+	 */
+	notifyPost( id ) {
+		let post = this.state.s_posts.filter(( post ) => id == post.id );
+		this.setState( { post: post } );
+	}
+
 
 
 	/**
@@ -161,6 +170,7 @@ class App extends Component {
 				s_words={this.state.s_words} b_words={this.state.b_words}
 				notifySideS={this.onSletter.bind( this )} notifySideB={this.onBletter.bind( this )}
 				sletter={this.state.sletter} bletter={this.state.bletter}
+				post={this.state.post} notifyPost={this.notifyPost.bind( this )}
 			/>
 			</div> 
 			);

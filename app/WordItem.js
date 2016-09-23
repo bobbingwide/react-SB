@@ -12,7 +12,6 @@
  * - We no longer need to be passed the words, only the data
  * 
 
- <WordItem key={post.id} data={post} notifyBoard={this.props.notifyBoard} first={this.props.first}  />
  */
  
 import React, { Component, PropTypes } from 'react';
@@ -20,17 +19,17 @@ import React, { Component, PropTypes } from 'react';
 class WordItem extends Component {
 
 	/**
-	 * How do we notify the Side which word's been selected
+	 * How do we notify the App which bigram's been selected
 	 * 
-	 * OK. so we get the word that's been clicked and now we use a callback to notify the Board!
+	 * OK. so we get the word that's been clicked and now we use a callback to notify the App
 	 */
-	handleClick( letter) {
-			//alert( "Wow: " + letter );
-			this.props.notifyBoard( letter );
-
+	handleClick( id ) {
+			console.log( "handleClick", id );
+			this.props.notifyPost( id );
 	}
+
 	render() {
-		//console.log( "Data", this.props.data );
+		console.log( "Data", this.props.data );
 		//console.log( "First", this.props.first );
 		let name = '';
 		if ( this.props.first == "S" ) {
@@ -43,7 +42,7 @@ class WordItem extends Component {
 		  //let word = this.props.words.filter( ( word ) => word.id === this.props.data['s-word'][0]);
 		//{this.props.data['s-word'][0]}
 		return(
-		<li onClick={this.handleClick.bind(this, this.props.data.name )}>
+		<li onClick={this.handleClick.bind(this, this.props.data.id )}>
 		{name}
 		</li>
 		);
@@ -51,7 +50,7 @@ class WordItem extends Component {
 }
 
 WordItem.propTypes = {
-	notifyBoard: PropTypes.func.isRequired,
+	notifyPost: PropTypes.func.isRequired,
 	data: PropTypes.object.isRequired,
 	first: PropTypes.string.isRequired,
 }

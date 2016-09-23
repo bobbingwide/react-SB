@@ -16,6 +16,7 @@
 import React, { Component, PropTypes } from 'react';
 import {render} from 'react-dom';
 import Side2 from './Side2';
+import Details from './Details';
 
 // Instead of getting passed the words array we now extract it from this.props.posts
 
@@ -26,9 +27,9 @@ class Board2 extends Component {
 		//let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 		return( 
 			<div className="app">
-			 <Side2 side="S" letters={this.props.s_letters} posts={this.props.s_posts} letter={this.props.sletter} notifyBoard={this.props.notifySideS} words={this.props.s_words} />
-			 <Side2 side="B" letters={this.props.b_letters} posts={this.props.b_posts} letter={this.props.bletter} notifyBoard={this.props.notifySideB} words={this.props.b_words} /> 
-			 {/* <Bigram /> */}
+			 <Side2 side="S" letters={this.props.s_letters} posts={this.props.s_posts} letter={this.props.sletter} notifyBoard={this.props.notifySideS} words={this.props.s_words} notifyPost={this.props.notifyPost} />
+			 <Side2 side="B" letters={this.props.b_letters} posts={this.props.b_posts} letter={this.props.bletter} notifyBoard={this.props.notifySideB} words={this.props.b_words} notifyPost={this.props.notifyPost} /> 
+			 <Details post={this.props.post} />
 			</div>
 		);
 	}
@@ -49,6 +50,8 @@ Board2.propTypes = {
 	notifySideB: PropTypes.func,
 	sletter: PropTypes.string,
 	bletter: PropTypes.string,
+	post: PropTypes.array,
+	notifyPost: PropTypes.func,
  
 }
 

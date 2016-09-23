@@ -28,7 +28,7 @@ class Side2 extends Component {
 			<div className="side" >
 			<h1>{this.props.side}</h1>
 				<Links2 first={this.props.side} letters={this.props.letters} letter={this.props.letter} notifyBoard={this.props.notifyBoard} />
-				<Items2 first={this.props.side} posts={this.props.posts} letter={this.props.letter} notifyBoard={this.props.notifyBoard}  />
+				<Items2 first={this.props.side} posts={this.props.posts} letter={this.props.letter} notifyPost={this.props.notifyPost}  />
 		  </div>
 		);
 	}
@@ -41,7 +41,8 @@ Side2.propTypes = {
 	words: PropTypes.array.isRequired,
 	posts: PropTypes.array.isRequired,
 	letter: PropTypes.string.isRequired,
-	notifyBoard: PropTypes.func.isRequired
+	notifyBoard: PropTypes.func.isRequired,
+	notifyPost: PropTypes.func.isRequired,
 }
 
 export default Side2;

@@ -34,3 +34,9 @@ div.side li:hover {
 	background-color: #222222;
 }
 
+div.details { 
+	float: left;
+	width: 100%; 
+	background-color: #eeeeee;
+}
+
