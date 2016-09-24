@@ -18,8 +18,8 @@ class Details extends Component {
 		//						 };
 	}
 
-	content( post ) { 
-		return( { __html: post.content.rendered} );
+	content( field ) { 
+		return( { __html: field.rendered} );
 	}
 
 	/**
@@ -38,8 +38,8 @@ class Details extends Component {
 		if ( post ) {
 			return( 
 				<div className="details" >
-				<h2>{post.title.rendered}</h2>
-					<div className="content" dangerouslySetInnerHTML={ this.content( post ) } />
+				<h2 classsName="title" dangerouslySetInnerHTML={ this.content( post.title) } />
+					<div className="content" dangerouslySetInnerHTML={ this.content( post.content ) } />
 					<div className="featured">
 						<Image post={post} />
 					</div>
