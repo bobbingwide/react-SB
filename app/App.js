@@ -153,6 +153,9 @@ class App extends Component {
 	 */
 	notifyPost( id ) {
 		let post = this.state.s_posts.filter(( post ) => id == post.id );
+		if ( !post[0] ) {
+			post = this.state.b_posts.filter(( post ) => id == post.id );
+		}
 		this.setState( { post: post } );
 	}
 
