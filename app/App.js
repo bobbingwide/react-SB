@@ -61,10 +61,11 @@ class App extends Component {
 	 * Obtain all posts for the second letter of the S word
 	 * 
 	 * Perform: http://qw/bigram/wp-json/wp/v2/bigram/?filter[s-letter]=A
+   * WordPress 4.7: /wp-json/wp/v2/bigram/?s-letter=sletter-id
 	 */
 	onSletter( sletter ) {
 		//this.setState( { isLoading: true } );
-		demoApi.get( '/wp/v2/bigram/', { filter: { 's-letter': sletter }, _embed: true } )
+		demoApi.get( '/wp/v2/bigram/', { 's-letter': sletter, _embed: true } )
 		.then( posts => { 
 			this.setState( {s_posts: posts, sletter: sletter } );
 			//this.setState( {isLoading: false } );
@@ -76,10 +77,11 @@ class App extends Component {
 	 * Obtain all posts for the second letter of the B word
 	 * 
 	 * Perform: http://qw/bigram/wp-json/wp/v2/bigram/?filter[b-letter]=A
+	 * WordPress 4.7: /wp-json/wp/v2/bigram/?b-letter=bletter-id
 	 */
 	onBletter( bletter ) {
 		//this.setState( { isLoading: true } );
-		demoApi.get( '/wp/v2/bigram/', { filter: { 'b-letter': bletter }, _embed: true } )
+		demoApi.get( '/wp/v2/bigram/', { 'b-letter': bletter, _embed: true } )
 		.then( posts => { 
 			this.setState( {b_posts: posts, bletter: bletter } );
 			//this.setState( {isLoading: false } );
@@ -150,6 +152,8 @@ class App extends Component {
 
 	/**
 	 * NotifyPost
+	 * 
+	 * Locate the selected post from the S side then the B side
 	 */
 	notifyPost( id ) {
 		let post = this.state.s_posts.filter(( post ) => id == post.id );

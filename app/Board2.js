@@ -48,8 +48,8 @@ Board2.propTypes = {
 	b_letters: PropTypes.array,
 	notifySideS: PropTypes.func,
 	notifySideB: PropTypes.func,
-	sletter: PropTypes.string,
-	bletter: PropTypes.string,
+	sletter: PropTypes.number,
+	bletter: PropTypes.number,
 	post: PropTypes.array,
 	notifyPost: PropTypes.func,
  

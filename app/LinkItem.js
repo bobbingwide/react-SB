@@ -25,7 +25,7 @@ class LinkItem extends Component {
 	render() {
 		//console.log( "LinkItem" + this.props.data.name);
 		return(
-		<li onClick={this.handleClick.bind(this, this.props.data.name )}>
+		<li onClick={this.handleClick.bind(this, this.props.data.id )}>
 		{this.props.data.name}
 		</li>
 		);
