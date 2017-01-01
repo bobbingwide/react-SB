@@ -224,11 +224,16 @@ export default class {
 			headers = {...headers, ...oauth1.toHeader( oauthData )}
 		}
 
+		/**
+		 *   $.ajaxSetup({     timeout: 10*1000   });
+		 */
+
 		return fetch( url, {
 			method: method,
 			headers: headers,
 			mode: 'cors',
-			body: ['GET','HEAD'].indexOf( method ) > -1 ? null : qs.stringify( data )
+			body: ['GET','HEAD'].indexOf( method ) > -1 ? null : qs.stringify( data ),
+			timeout: 10000
 		} )
 		.then( response => {
 			console.log( "Response headers", response );
