@@ -40,7 +40,7 @@ Side2.propTypes = {
 	letters: PropTypes.array.isRequired,
 	words: PropTypes.array.isRequired,
 	posts: PropTypes.array.isRequired,
-	letter: PropTypes.string.isRequired,
+	letter: PropTypes.number.isRequired,
 	notifyBoard: PropTypes.func.isRequired,
 	notifyPost: PropTypes.func.isRequired,
 }

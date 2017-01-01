@@ -1,5 +1,5 @@
 /**
- * (C) Copyright Bobbing Wide 2016
+ * (C) Copyright Bobbing Wide 2016, 2017
  * 
  * We assume that the 'api' appends the wp-json part to the url 
  * Want to get your site's posts? 
@@ -43,8 +43,8 @@ class App extends Component {
 			s_posts: [],
 			b_posts: [],
 			isLoading: false,
-		  sletter: '',
-			bletter: '',
+		  sletter: 0,
+			bletter: 0,
 			post: null,
 		}
 	}
@@ -169,7 +169,7 @@ class App extends Component {
 	 * Render the Application
 	 */
   render() {
-	 
+	 	//console.log( "sletter", this.state.sletter );
 		return( 
 			<div className="app">
 			<Board2 s_posts={this.state.s_posts} b_posts={this.state.b_posts} 
