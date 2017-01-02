@@ -2,12 +2,18 @@
  * (C) Copyright Bobbing Wide 2016, 2017
  * 
  * We assume that the 'api' appends the wp-json part to the url 
+ * 
+ * This is an extract from WP API docs, written before WordPress 4.7
+ * 
  * Want to get your site's posts? 
  * Simply send a GET request to /wp-json/wp/v2/posts.
  * Update user with ID 4? Send a PUT request to /wp-json/wp/v2/users/4. 
  * Get all posts with the search term "awesome"? GET /wp-json/wp/v2/posts?filter[s]=awesome. 
  * It's that easy.
  * 
+ * Note: The documentation is now out of date.
+ * 
+ * Is it that easy? 
  * Well... yes and no. The posts that are returned don't expand the taxonomy terms, you just get the ids.
  * So you need to get them too. 
  * That suggests this App needs to manage quite a lot of data. 
@@ -52,7 +58,7 @@ class App extends Component {
 		//this.loadallswords();
 		//this.loadbwords();
 		this.loadsletters();
-		this.loadbletters();
+		//this.loadbletters();
 		//this.onSletter( 'A' );
 		//this.onBletter( 'A' );
 	}
@@ -131,23 +137,34 @@ class App extends Component {
 		demoApi.get( '/wp/v2/s-letter/', { per_page: 31, page: 1 } )
 			.then( terms => { 
 				this.setState( {s_letters: terms } );
-				//this.setState( {isLoading: false } );
+				this.loadbletters( 1 );
 			 });
 	}
 
 	/**
 	 * Obtain all values for the b-letter taxonomy
+	 * 
+	 * Here we're trying to implement pagination logic, so using getPage() rather than get()
+	 * 
+	 * 
 	 *
 	 * Perform: http://qw/bigram/wp-json/wp/v2/b-letter/
 	 */
-	loadbletters() {		
+	loadbletters( p ) {		
 		//this.setState( { isLoading: true } );
-		demoApi.get( '/wp/v2/b-letter/', { per_page: 31, page: 1 } )
-			.then( terms => { 
-				this.setState( {b_letters: terms } );
-				//this.setState( {isLoading: false } );
-			 });
+		var page = p;
+		demoApi.getPage( '/wp/v2/b-letter/', { per_page: 10, page: page }, page )
+			.then( terms => {
+				console.log( "terms", terms );
+				let concatterms = this.state.b_letters.concat( terms.json );
+				this.setState( {b_letters: concatterms } );
+				if ( page < terms.total ) {
+					p++;
+					this.loadbletters( p );
+				}
 
+				//this.setState( {isLoading: false } );
+		});
 	}
 
 	/**
