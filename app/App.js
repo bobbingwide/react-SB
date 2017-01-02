@@ -54,10 +54,16 @@ class App extends Component {
 			post: null,
 		}
 	}
+
+	/**
+	 * Start by loading the s-letters for the S word
+	 * 
+	 * The rest will follow.
+	 */
 	componentDidMount() {
 		//this.loadallswords();
 		//this.loadbwords();
-		this.loadsletters();
+		this.loadsletters( 1 );
 		//this.loadbletters();
 		//this.onSletter( 'A' );
 		//this.onBletter( 'A' );
@@ -129,16 +135,24 @@ class App extends Component {
 
 	/**
 	 * Obtain all values for the s-letter taxonomy
+	 * 
+	 * then load the b-letters
 	 *
 	 * Perform: http://qw/bigram/wp-json/wp/v2/s-letter/
 	 */
-	loadsletters() {
-		//this.setState( { isLoading: true } );
-		demoApi.get( '/wp/v2/s-letter/', { per_page: 31, page: 1 } )
+	loadsletters( p ) {
+		var page = p;
+		demoApi.getPage( '/wp/v2/s-letter/', { per_page: 10, page: page }, page )
 			.then( terms => { 
-				this.setState( {s_letters: terms } );
-				this.loadbletters( 1 );
-			 });
+				let concatterms = this.state.s_letters.concat( terms.json );
+				this.setState( {s_letters: concatterms } );
+				if ( page < terms.total ) {
+					p++;
+					this.loadsletters( p );
+				} else {
+					this.loadbletters( 1 );
+				}
+			});
 	}
 
 	/**
@@ -151,20 +165,17 @@ class App extends Component {
 	 * Perform: http://qw/bigram/wp-json/wp/v2/b-letter/
 	 */
 	loadbletters( p ) {		
-		//this.setState( { isLoading: true } );
 		var page = p;
 		demoApi.getPage( '/wp/v2/b-letter/', { per_page: 10, page: page }, page )
 			.then( terms => {
-				console.log( "terms", terms );
+				//console.log( "terms", terms );
 				let concatterms = this.state.b_letters.concat( terms.json );
 				this.setState( {b_letters: concatterms } );
 				if ( page < terms.total ) {
 					p++;
 					this.loadbletters( p );
 				}
-
-				//this.setState( {isLoading: false } );
-		});
+			});
 	}
 
 	/**
