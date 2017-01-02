@@ -69,19 +69,29 @@ class App extends Component {
 		//this.onBletter( 'A' );
 	}
 
+	onSletter( sletter ) {
+		this.onSletterLoop( sletter, 1 );
+	}
+
 	/**
 	 * Obtain all posts for the second letter of the S word
 	 * 
 	 * Perform: http://qw/bigram/wp-json/wp/v2/bigram/?filter[s-letter]=A
    * WordPress 4.7: /wp-json/wp/v2/bigram/?s-letter=sletter-id
+	 * 
+	 * WordPress 4.7: /wp-json/wp/v2/bigram/?s-letter=sletter-id&page=1&per_page=n
+	 * 	 
 	 */
-	onSletter( sletter ) {
-		//this.setState( { isLoading: true } );
-		demoApi.get( '/wp/v2/bigram/', { 's-letter': sletter, _embed: true } )
-		.then( posts => { 
-			this.setState( {s_posts: posts, sletter: sletter } );
-			//this.setState( {isLoading: false } );
-			 });
+	onSletterLoop( sletter, page ) {
+		demoApi.getPage( '/wp/v2/bigram/', { 's-letter': sletter, _embed: true, page: page }, page )
+			.then( posts => { 
+				let concatposts = this.state.s_posts.concat( posts.json );
+			this.setState( {s_posts: concatposts } );
+			if ( page < posts.total ) {
+				page++;
+				this.onSletterLoop( sletter, page );
+			}
+		});
 	}
 
 
