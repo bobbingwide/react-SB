@@ -1,5 +1,8 @@
-/** 
- * cloned version of wordpress-rest-api-oauth1 [github joehoyle wordpress-rest-api-oauth1] 
+/**
+ * (C) Copyright Bobbing Wide 2016,2017 
+ *
+ * cloned version of wordpress-rest-api-oauth1 [github WP-API wordpress-rest-api-oauth1] 
+ * This repo is now under WP-API; was joehoyle
  * 
  * This version is different because:
  * - I want to be able to find out how many pages there might be
@@ -237,6 +240,7 @@ export default class {
 		} )
 		.then( response => {
 			console.log( "Response headers", response );
+			this.setPagination( response );
 			if ( response.headers.get( 'Content-Type' ) && response.headers.get( 'Content-Type' ).indexOf( 'x-www-form-urlencoded' ) > -1 ) {
 				return response.text().then( text => {
 					return qs.parse( text )
@@ -247,7 +251,7 @@ export default class {
 				try {
 					var json = JSON.parse( text )
 				} catch( e ) {
-					throw { message: text, code: response.status }
+					throw { message: text, code: response.status }		 
 				}
 
 				if ( response.status >= 300) {
@@ -257,5 +261,35 @@ export default class {
 				}
 			})
 		} )
+	}
+
+	/**
+	 * First attempt at catering for paginated results
+	 * Not suitable for multiple parallel queries.
+	 */
+	setPagination( response ) {
+
+		var total = response.headers.get( 'X-WP-Total' );
+		this.total = total;
+		var total_pages = response.headers.get( 'X-WP-TotalPages' );
+		this.total_pages = total_pages;
+
+		console.log( "Total", total, "Pages", total_pages );
+		
+	}
+
+	/**
+	 * Get a page of data
+	 *
+	 * Wrapper to get to allow multiple pages of data
+	 */
+	getPage( url, data, page ) {
+		return(
+			this.request( 'GET', url, data )
+			.then( json=> {
+				console.log( 'json', json );
+				return { json: json, page: page, total: this.total_pages } 
+			})
+		)
 	}
 }
