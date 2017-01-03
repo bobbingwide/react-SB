@@ -3,6 +3,7 @@
  * Display Word Items for the selected side
  * 
  * We display the list of words that match the selected side and chosen letter.
+ *
  * 
  * - This list may contain duplicates
  * - The list may contain more words than returned from a single query
@@ -32,13 +33,14 @@ class WordItem extends Component {
 		console.log( "Data", this.props.data );
 		//console.log( "First", this.props.first );
 		let name = '';
-		if ( this.props.first == "S" ) {
+		//if ( this.props.first == "S" ) {
 			name = this.props.data._embedded['wp:term'][1][0].name;
 			//console.log( '!' + name + '!' );
-		} else {
-			name = this.props.data._embedded['wp:term'][2][0].name;
-		}
-		//console.log( "NME", name,);
+		//} else {
+			name += " ";
+			name += this.props.data._embedded['wp:term'][2][0].name;
+		//}
+		console.log( "NME", name );
 		  //let word = this.props.words.filter( ( word ) => word.id === this.props.data['s-word'][0]);
 		//{this.props.data['s-word'][0]}
 		return(
