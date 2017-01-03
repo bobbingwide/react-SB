@@ -34,18 +34,19 @@ class WordItem extends Component {
 		//console.log( "First", this.props.first );
 		let name = '';
 		//if ( this.props.first == "S" ) {
-			name = this.props.data._embedded['wp:term'][1][0].name;
+		//	name = this.props.data._embedded['wp:term'][1][0].name;
 			//console.log( '!' + name + '!' );
 		//} else {
-			name += " ";
-			name += this.props.data._embedded['wp:term'][2][0].name;
+		//	name += " ";
+		//	name += this.props.data._embedded['wp:term'][2][0].name;
 		//}
+		name = this.props.data.title.rendered;
 		console.log( "NME", name );
 		  //let word = this.props.words.filter( ( word ) => word.id === this.props.data['s-word'][0]);
 		//{this.props.data['s-word'][0]}
 		return(
-		<li onClick={this.handleClick.bind(this, this.props.data.id )}>
-		{name}
+		<li onClick={this.handleClick.bind(this, this.props.data.id )}> 
+		<span	dangerouslySetInnerHTML={ {__html: name} } />
 		</li>
 		);
 	}
