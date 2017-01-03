@@ -35,9 +35,11 @@ class Items2 extends Component {
 		});
 
 		return( 
+				<div className="items">
 				<ul>
 				{links}
 			 	</ul>
+				</div>
 		);
 	}
 }
