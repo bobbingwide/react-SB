@@ -1,12 +1,11 @@
 /**
- * (C) Copyright Bobbing Wide 2016
+ * (C) Copyright Bobbing Wide 2016, 2017
  * Display Link Items for the selected side
+ *
+ * These are list items rather than link items
+ * but they behave like list items when clicked on
  * 
- * Challenges:
- * - Create a link for each second letter - determined from parameter ( prop letters )
- * - Taking into account the first letter - passed as a parameter ( prop  first )
- * 
- * @TODO Do they really need to be links. 
+ * Clicking on the item notifies the Board to load a list of posts matching the given letter
  * 
  */
 import React, { Component, PropTypes } from 'react';
@@ -18,15 +17,13 @@ class LinkItem extends Component {
 	 * OK. so we get the letter that's been clicked and now we use a callback to notify the Board!
 	 */
 	handleClick( letter) {
-			//alert( "Wow: " + letter );
-			this.props.notifyBoard( letter );
-
+		this.props.notifyBoard( letter );
 	}
+
 	render() {
-		//console.log( "LinkItem" + this.props.data.name);
 		return(
 		<li onClick={this.handleClick.bind(this, this.props.data.id )}>
-		{this.props.data.name}
+		<span dangerouslySetInnerHTML={ {__html:this.props.data.name} } />
 		</li>
 		);
 	}
