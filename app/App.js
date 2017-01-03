@@ -70,6 +70,7 @@ class App extends Component {
 	 * &TODO Each time a selection is made we need to stop the processing of the previous selection.
 	 */
 	onSletter( sletter ) {
+		this.setState( { s_posts: [] } );
 		this.onletterLoop( 's-letter', sletter, 1 );
 	}
 
@@ -77,6 +78,8 @@ class App extends Component {
 	 * Obtain all posts for the second letter of the B word
 	 */
 	onBletter( bletter ) {
+
+		this.setState( { s_posts: [] } );
 		this.onletterLoop( 'b-letter', bletter, 1 );
 	}
 
@@ -91,7 +94,7 @@ class App extends Component {
 	 * 	 
 	 */
 	onletterLoop( taxonomy, sletter, page ) {
-		var parms = { _embed: true, page: page };
+		var parms = { page: page, per_page: 50 };
 		parms[taxonomy] = sletter;
 		demoApi.getPage( '/wp/v2/bigram/', parms , page )
 			.then( posts => { 
@@ -113,7 +116,7 @@ class App extends Component {
 	 */
 	loadsletters( p ) {
 		var page = p;
-		demoApi.getPage( '/wp/v2/s-letter/', { per_page: 10, page: page }, page )
+		demoApi.getPage( '/wp/v2/s-letter/', { per_page: 40, page: page }, page )
 			.then( terms => { 
 				let concatterms = this.state.s_letters.concat( terms.json );
 				this.setState( {s_letters: concatterms } );
@@ -137,7 +140,7 @@ class App extends Component {
 	 */
 	loadbletters( p ) {		
 		var page = p;
-		demoApi.getPage( '/wp/v2/b-letter/', { per_page: 10, page: page }, page )
+		demoApi.getPage( '/wp/v2/b-letter/', { per_page: 40, page: page }, page )
 			.then( terms => {
 				//console.log( "terms", terms );
 				let concatterms = this.state.b_letters.concat( terms.json );
