@@ -1,12 +1,13 @@
-/* (C) Copyright Bobbing Wide 2016 
- * Styles for react-SB
+/* (C) Copyright Bobbing Wide 2016, 2017 
+ * Styles for react-SB 
+ *
  */
-
 body {
   font: 16px/1 sans-serif;
 }
+
 #root {
-	width: 80%; 
+	width: 100%; 
 	margin: 0 auto;
   height: 100%;
 }
@@ -26,8 +27,12 @@ div.side ul {
 div.side li,
 div.items li {
 	display: inline-block;
-	margin: 0 0 0 3px;
+	margin: 0 0 0 2px;
 	padding: 2px;
+}
+
+div.items li:nth-of-type(even) {
+	background-color: #eeeeee;
 }
 
 div.side li:hover,
