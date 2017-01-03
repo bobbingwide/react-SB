@@ -8,8 +8,8 @@ var config = {
   devtool: 'eval-source-map',
   entry:  __dirname + "/app/App.js",
   output: {
-    path: __dirname + "/public",
-    filename: "bundle.js"
+    path: __dirname + "/public/js",
+    filename: "react-SB.js"
   },
   module: {
     loaders: [{
