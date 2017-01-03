@@ -1,5 +1,5 @@
 /**	
- * (C) Copyright Bobbing Wide 2016
+ * (C) Copyright Bobbing Wide 2016, 2017
  * Side
  
  * A Side consists of  
@@ -10,7 +10,8 @@
 import React, { Component, PropTypes } from 'react';
 import {render} from 'react-dom';
 import Links2 from './Links2';
-import Items2 from './Items2';
+//import Items2 from './Items2';
+// <Items2 first={this.props.side} posts={this.props.posts} letter={this.props.letter} notifyPost={this.props.notifyPost}  />
 
 
 class Side2 extends Component {
@@ -23,12 +24,11 @@ class Side2 extends Component {
 
 
 	render() {
-		console.log( this.props.words );
+		//console.log( this.props.words );
 		return( 
 			<div className="side" >
 			<h1>{this.props.side}</h1>
 				<Links2 first={this.props.side} letters={this.props.letters} letter={this.props.letter} notifyBoard={this.props.notifyBoard} />
-				<Items2 first={this.props.side} posts={this.props.posts} letter={this.props.letter} notifyPost={this.props.notifyPost}  />
 		  </div>
 		);
 	}
