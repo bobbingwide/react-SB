@@ -61,87 +61,48 @@ class App extends Component {
 	 * The rest will follow.
 	 */
 	componentDidMount() {
-		//this.loadallswords();
-		//this.loadbwords();
 		this.loadsletters( 1 );
-		//this.loadbletters();
-		//this.onSletter( 'A' );
-		//this.onBletter( 'A' );
-	}
-
-	onSletter( sletter ) {
-		this.onSletterLoop( sletter, 1 );
 	}
 
 	/**
 	 * Obtain all posts for the second letter of the S word
+	 *
+	 * &TODO Each time a selection is made we need to stop the processing of the previous selection.
+	 */
+	onSletter( sletter ) {
+		this.onletterLoop( 's-letter', sletter, 1 );
+	}
+
+	/**
+	 * Obtain all posts for the second letter of the B word
+	 */
+	onBletter( bletter ) {
+		this.onletterLoop( 'b-letter', bletter, 1 );
+	}
+
+	/**
+	 * Obtain all posts for the second letter of the chosen word
 	 * 
-	 * Perform: http://qw/bigram/wp-json/wp/v2/bigram/?filter[s-letter]=A
+	 * WordPress 4.6: http://qw/bigram/wp-json/wp/v2/bigram/?filter[s-letter]=A
+	 *
    * WordPress 4.7: /wp-json/wp/v2/bigram/?s-letter=sletter-id
 	 * 
 	 * WordPress 4.7: /wp-json/wp/v2/bigram/?s-letter=sletter-id&page=1&per_page=n
 	 * 	 
 	 */
-	onSletterLoop( sletter, page ) {
-		demoApi.getPage( '/wp/v2/bigram/', { 's-letter': sletter, _embed: true, page: page }, page )
+	onletterLoop( taxonomy, sletter, page ) {
+		var parms = { _embed: true, page: page };
+		parms[taxonomy] = sletter;
+		demoApi.getPage( '/wp/v2/bigram/', parms , page )
 			.then( posts => { 
 				let concatposts = this.state.s_posts.concat( posts.json );
-			this.setState( {s_posts: concatposts } );
-			if ( page < posts.total ) {
-				page++;
-				this.onSletterLoop( sletter, page );
-			}
-		});
+				this.setState( {s_posts: concatposts } );
+				if ( page < posts.total ) {
+					page++;
+					this.onletterLoop( taxonomy, sletter, page );
+				}
+			});
 	}
-
-
-	/**
-	 * Obtain all posts for the second letter of the B word
-	 * 
-	 * Perform: http://qw/bigram/wp-json/wp/v2/bigram/?filter[b-letter]=A
-	 * WordPress 4.7: /wp-json/wp/v2/bigram/?b-letter=bletter-id
-	 */
-	onBletter( bletter ) {
-		//this.setState( { isLoading: true } );
-		demoApi.get( '/wp/v2/bigram/', { 'b-letter': bletter, _embed: true } )
-		.then( posts => { 
-			this.setState( {b_posts: posts, bletter: bletter } );
-			//this.setState( {isLoading: false } );
-			 });
-	}
-
-	/**
-	 * Obtain all values for the S-word taxonomy
-	 */
-	loadswords( page ) {
-		demoApi.get( '/wp/v2/s-word/', { page: page } )
-			.then( terms => { 
-				let concatterms = this.state.s_words.concat( terms );
-				this.setState( {s_words: concatterms } );
-		});
-	}
-
-	/**
-	 * 
-	 */
-	loadallswords() {
-		let page = 1;
-		this.loadswords( page );
-		page = 2;
-		this.loadswords( page ); 
-	}
-		 
-	/**
-	 * Obtain all values for the B-word taxonomy
-	 */
-	loadbwords() {
-		demoApi.get( '/wp/v2/b-word/', {  } )
-			.then( terms => { 
-				this.setState( { b_words: terms } );
-		});
-	}
-
-
 
 	/**
 	 * Obtain all values for the s-letter taxonomy
