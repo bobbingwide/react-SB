@@ -1,5 +1,5 @@
 /**
- * (C) Copyright Bobbing Wide 2016
+ * (C) Copyright Bobbing Wide 2016, 2017
  *
  * Items in a selected list
  *
@@ -18,19 +18,17 @@
  * When both are chosen then the bigram is loaded and displayed. 
  */
  
- 
 import React, { Component, PropTypes } from 'react';
 import WordItem from './WordItem.js';
 
 class Items2 extends Component {
-
 
 	render() {
 		console.log( "Item2 props", this.props );
 
 		let links = this.props.posts.map(( post ) => { 
 			return (
-			<WordItem key={post.id} data={post} notifyPost={this.props.notifyPost} first={this.props.first}  />
+			<WordItem key={post.id} data={post} notifyPost={this.props.notifyPost}  />
 				)
 		});
 
@@ -45,7 +43,6 @@ class Items2 extends Component {
 }
 
 Items2.propTypes = {
-	first: PropTypes.string.isRequired,
 	posts: PropTypes.array.isRequired,
 	notifyPost: PropTypes.func.isRequired
 }

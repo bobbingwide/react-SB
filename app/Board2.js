@@ -10,7 +10,7 @@
  * - a heading for the first letter					    S
  * - a list of links for the second letter   A B C ... X Y Z
  * - items with the selected first and second letter
- * 
+ * - details for the selected item
  */
 
 import React, { Component, PropTypes } from 'react';
@@ -24,8 +24,6 @@ import Items from './Items2';
 class Board2 extends Component {
 
 	render() {
-		//let letters = [ 'A', 'B', 'C', 'D', 'E' ];
-		//let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 		return( 
 			<div className="app">
 			 <Side2 side="S" letters={this.props.s_letters} posts={this.props.s_posts} letter={this.props.sletter} notifyBoard={this.props.notifySideS} words={this.props.s_words} notifyPost={this.props.notifyPost} />

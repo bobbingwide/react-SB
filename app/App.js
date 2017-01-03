@@ -155,14 +155,19 @@ class App extends Component {
 	/**
 	 * NotifyPost
 	 * 
-	 * Locate the selected post from the S side then the B side
+	 * Load the selected post, with _embed true so that the featured image and other stuff is available,
+	 * then setState to display it.
 	 */
 	notifyPost( id ) {
-		let post = this.state.s_posts.filter(( post ) => id == post.id );
-		if ( !post[0] ) {
-			post = this.state.b_posts.filter(( post ) => id == post.id );
-		}
-		this.setState( { post: post } );
+		//let post = this.state.s_posts.filter(( post ) => id == post.id );
+		//if ( !post[0] ) {
+		//	post = this.state.b_posts.filter(( post ) => id == post.id );
+		//}
+		demoApi.get( '/wp/v2/bigram/' + id, { _embed: true } )
+			.then( post => {
+				console.log( id, post );
+				this.setState( { post: [ post ] } );
+		});
 	}
 
 
