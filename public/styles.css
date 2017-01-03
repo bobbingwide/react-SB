@@ -23,13 +23,15 @@ div.side ul {
 	display: block;
 }
 
-div.side li {
+div.side li,
+div.items li {
 	display: inline-block;
 	margin: 0 0 0 3px;
 	padding: 2px;
 }
 
-div.side li:hover {
+div.side li:hover,
+div.items li:hover {
 	color: #ffffff;
 	background-color: #222222;
 }
