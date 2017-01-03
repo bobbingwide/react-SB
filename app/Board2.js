@@ -1,5 +1,5 @@
 /**
- * (C) Copyright Bobbing Wide 2016
+ * (C) Copyright Bobbing Wide 2016, 2017
  *
  * Implement the Board2
  * 
@@ -17,6 +17,7 @@ import React, { Component, PropTypes } from 'react';
 import {render} from 'react-dom';
 import Side2 from './Side2';
 import Details from './Details';
+import Items from './Items2';
 
 // Instead of getting passed the words array we now extract it from this.props.posts
 
@@ -29,6 +30,7 @@ class Board2 extends Component {
 			<div className="app">
 			 <Side2 side="S" letters={this.props.s_letters} posts={this.props.s_posts} letter={this.props.sletter} notifyBoard={this.props.notifySideS} words={this.props.s_words} notifyPost={this.props.notifyPost} />
 			 <Side2 side="B" letters={this.props.b_letters} posts={this.props.b_posts} letter={this.props.bletter} notifyBoard={this.props.notifySideB} words={this.props.b_words} notifyPost={this.props.notifyPost} /> 
+			 <Items words={this.props.s_words} notifyPost={this.props.notifyPost}  posts={this.props.s_posts}/>
 			 <Details post={this.props.post} />
 			</div>
 		);
