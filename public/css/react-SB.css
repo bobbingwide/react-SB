@@ -61,3 +61,7 @@ div.featured img {
 	max-width: 100%;
 }
 
+div.featured p {
+	text-align: center;
+}
+

@@ -27,7 +27,17 @@ import api from './rest-api';
 //const BIGRAM_URL = "http://qw/bigram/"
 // http://stackoverflow.com/questions/10143093/origin-is-not-allowed-by-access-control-allow-origin
 // Using http://localhost doesn't work a lot of the time.
-const BIGRAM_URL = "http://localhost/bigram/"
+
+var current_url = window.location.hostname;
+if ( "localhost" == window.location.hostname ) {
+	current_url = window.location.protocol + '//qw/bigram/';
+} else if ( "qw" == window.location.hostname ) {
+	current_url = window.location.protocol +  '//qw/bigram/';
+} else { 
+	current_url = window.location.protocol+ '//' + window.location.hostname + '/';
+}
+console.log( "current_url: %s", current_url );
+const BIGRAM_URL = current_url;
 
 const CALLBACK_URL = 'http://localhost:8080/'
 

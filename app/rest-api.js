@@ -12,6 +12,7 @@
  */
 import qs from 'qs'
 import oauth from 'oauth-1.0a'
+import 'whatwg-fetch'
 
 export default class {
 	constructor( config ) {
@@ -226,6 +227,9 @@ export default class {
 		if ( oauth1 ) {
 			headers = {...headers, ...oauth1.toHeader( oauthData )}
 		}
+		//alert( "url: " + url );
+		//var stringified = qs.stringify( data );
+		//alert( "stringified: " + stringified ); 
 
 		/**
 		 *   $.ajaxSetup({     timeout: 10*1000   });
@@ -239,7 +243,7 @@ export default class {
 			timeout: 10000
 		} )
 		.then( response => {
-			console.log( "Response headers", response );
+			//console.log( "Response headers", response );
 			this.setPagination( response );
 			if ( response.headers.get( 'Content-Type' ) && response.headers.get( 'Content-Type' ).indexOf( 'x-www-form-urlencoded' ) > -1 ) {
 				return response.text().then( text => {
@@ -274,7 +278,7 @@ export default class {
 		var total_pages = response.headers.get( 'X-WP-TotalPages' );
 		this.total_pages = total_pages;
 
-		console.log( "Total", total, "Pages", total_pages );
+		//console.log( "Total", total, "Pages", total_pages );
 		
 	}
 
@@ -284,10 +288,16 @@ export default class {
 	 * Wrapper to get to allow multiple pages of data
 	 */
 	getPage( url, data, page ) {
+		//alert( "url: " + url );
+		if ( self.fetch ) {
+				
+		} else {
+				alert( "hmm fetch not available:" + url );
+		}
 		return(
 			this.request( 'GET', url, data )
 			.then( json=> {
-				console.log( 'json', json );
+				//console.log( 'json', json );
 				return { json: json, page: page, total: this.total_pages } 
 			})
 		)
