@@ -19,10 +19,11 @@
     "webpack": "~1.12.*"
   },
   "dependencies": {
+    "oauth-1.0a": "^1.0.1",
+    "qs": "^6.2.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
-    "oauth-1.0a": "^1.0.1",
-    "qs": "^6.2.0"
+    "whatwg-fetch": "^2.0.1"
   },
   "_commented_devDependencies": {
     "webpack-dev-server": "~1.14.*",
