@@ -39,14 +39,14 @@ class Details extends Component {
 			return( 
 				<div className="details" >
 				<h2 className="title" dangerouslySetInnerHTML={ this.content( post.title) } />
-					<div className="content" dangerouslySetInnerHTML={ this.content( post.content ) } />
 					<div className="featured">
 						<Image post={post} />
 					</div>
+					<div className="content" dangerouslySetInnerHTML={ this.content( post.content ) } />
 			 </div>
 			);
 		} else {
-				return( <div className="details" >Select something</div> );
+			return( <div className="details" >Select something</div> );
 		}
 	}
 }
