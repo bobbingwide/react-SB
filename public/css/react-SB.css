@@ -1,4 +1,4 @@
-/* (C) Copyright Bobbing Wide 2016, 2017 
+/* (C) Copyright Bobbing Wide 2016-2018
  * Styles for react-SB 
  *
  */
@@ -10,6 +10,10 @@ body {
 	width: 100%; 
 	margin: 0 auto;
   height: 100%;
+}
+
+div.app {
+	background-color: #ffffff;
 }
 
 div.side { 	
@@ -42,19 +46,18 @@ div.items li:hover {
 }
 
 div.details { 
-	float: left;
-	width: 100%; 
-	background-color: #eeeeee;
+	clear: both;
+	max-width: 800px;
+	margin: 10px auto; 
+	background-color: #ffffff;
 }
 
 div.content {
-	float: left;
-	width: 50%;
+
+	float: none;
 }
 
 div.featured {
-	float: left;
-	width: 50%;
 }
 
 div.featured img {
@@ -63,5 +66,9 @@ div.featured img {
 
 div.featured p {
 	text-align: center;
+}
+
+div.items { 
+	clear: both;
 }
 
