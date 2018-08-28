@@ -28,8 +28,8 @@ class Board2 extends Component {
 			<div className="app">
 			 <Side2 side="S" letters={this.props.s_letters} posts={this.props.s_posts} letter={this.props.sletter} notifyBoard={this.props.notifySideS} words={this.props.s_words} notifyPost={this.props.notifyPost} />
 			 <Side2 side="B" letters={this.props.b_letters} posts={this.props.b_posts} letter={this.props.bletter} notifyBoard={this.props.notifySideB} words={this.props.b_words} notifyPost={this.props.notifyPost} /> 
-			 <Items words={this.props.s_words} notifyPost={this.props.notifyPost}  posts={this.props.s_posts}/>
 			 <Details post={this.props.post} />
+			 <Items words={this.props.s_words} notifyPost={this.props.notifyPost}  posts={this.props.s_posts}/>
 			</div>
 		);
 	}
